@@ -1,0 +1,647 @@
+Job 8434059 on nvl72175-T01: fab7790cb Share the shape validation and per-tensor alignment computation between the padded and unpadded builders; drop GlobalLayout.get_peer_ranges; replace the uneven_shards bool with a ShardLayout enum (PADDED / UNPADDED)
+overlay ready: /lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2 (torch 2.16.0.dev20261028+cu130 te 2.20.2)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-28 23:23:10] nvl72175-T01:1002432:1002432 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error 
+[2026-10-28 23:23:10] nvl72175-T01:1002434:1002434 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002433:1002433 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002435:1002435 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002435:1002435 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002434:1002434 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002433:1002433 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002432:1002432 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002435:1002435 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002434:1002434 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002432:1002432 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002433:1002433 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002435:1002435 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002434:1002434 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002432:1002432 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:10] nvl72175-T01:1002433:1002433 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002434:1002434 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002432:1002432 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002435:1002435 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002433:1002433 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002433:1002433 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002434:1002434 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002432:1002432 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002435:1002435 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002433:1002433 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002434:1002434 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002432:1002432 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002435:1002435 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002433:1002433 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002434:1002434 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002432:1002432 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 23:23:11] nvl72175-T01:1002435:1002435 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 275, in main
+    gm = trace(step, params, x, te_ops)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 157, in trace
+    gm = make_fx(step, tracing_mode="fake", record_stack_traces=False)(params, x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3556, in wrapped
+    return make_fx_tracer.trace(f, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3432, in trace
+    return self._trace_inner(f, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3382, in _trace_inner
+    t = dispatch_trace(
+        ^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_compile.py", line 54, in inner
+    return disable_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1652, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1923, in dispatch_trace
+    graph = tracer.trace(root, concrete_args)  # type: ignore[arg-type]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 943, in trace
+    (self.create_arg(fn(*args)),),
+                     ^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 783, in flatten_fn
+    tree_out = root_fn(*tree_args)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 2012, in wrapped
+    out = f(*tensors)  # type:ignore[call-arg]
+          ^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 125, in step
+    out = torch.func.functional_call(model, params, (x,))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_functorch/functional_call.py", line 154, in functional_call
+    return nn.utils.stateless._functional_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/utils/stateless.py", line 279, in _functional_call
+    return module(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 113, in forward
+    x = layer(x)
+        ^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 103, in forward
+    return x + self.fc2(torch.nn.functional.gelu(self.fc1(self.norm(x))))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 90, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+                                ^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1652, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 1904, in _linear_eager
+    return _Linear.apply(weight_tensor, inp, bias, fwd_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 1843, in forward
+    ) = _linear_forward_impl(fwd_args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 632, in _linear_forward_impl
+    gemm_out, *_, reduce_scatter_out = general_gemm(
+                                       ^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/cpp_extensions/gemm.py", line 301, in general_gemm
+    out, bias_grad, gelu_input, extra_output = tex.generic_gemm(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html
+RESULT {"prec": "bf16", "stage": "trace", "te_custom_ops": false, "ok": false, "error": "Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+RESULT {"prec": "bf16", "stage": "trace", "te_custom_ops": true, "ok": true, "trace_s": 0.1, "nodes": 271, "ns_hist": {"aten": 81, "python": 88, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:TE(layers.1) F:AG(layers.2.fc1.weight) F:AG(layers.2.fc1.weight) F:TE(layers.2) F:AG(layers.2.fc2.weight) F:AG(layers.2.fc2.weight) F:TE(layers.2) F:AG(layers.3.fc1.weight) F:AG(layers.3.fc1.weight) F:TE(layers.3) F:AG(layers.3.fc2.weight) F:AG(layers.3.fc2.weight) F:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc2.weight) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:TE(layers.2) B:RS(layers.2.fc2.weight) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:TE(layers.1) B:RS(layers.1.fc2.weight) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:TE(layers.0) B:RS(layers.0.fc2.weight) B:TE(layers.0) B:RS(layers.0.fc1.weight)", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "none", "eager_ms": 9.167, "nodes": 271, "ns_hist": {"aten": 81, "python": 88, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:TE(layers.1) F:AG(layers.2.fc1.weight) F:AG(layers.2.fc1.weight) F:TE(layers.2) F:AG(layers.2.fc2.weight) F:AG(layers.2.fc2.weight) F:TE(layers.2) F:AG(layers.3.fc1.weight) F:AG(layers.3.fc1.weight) F:TE(layers.3) F:AG(layers.3.fc2.weight) F:AG(layers.3.fc2.weight) F:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc2.weight) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:TE(layers.2) B:RS(layers.2.fc2.weight) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:TE(layers.1) B:RS(layers.1.fc2.weight) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:TE(layers.0) B:RS(layers.0.fc2.weight) B:TE(layers.0) B:RS(layers.0.fc1.weight)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 8.118, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.5", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': None, 'weight_quantizer': None, 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': None, 'activation_dtype': __import__('torch').bfloat16, 'fp8': False, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}))
+
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 298, in main
+    rec.update(**compare(run(g), ref))
+                         ^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 291, in run
+    return g(dict(zip(names, flat)), x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 1008, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 513, in __call__
+    raise e.with_traceback(None)  # noqa: B904
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "bucket", "eager_ms": 9.167, "nodes": 324, "ns_hist": {"aten": 154, "python": 112, "_c10d_functional": 28, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"_c10d_functional::all_gather_into_tensor_out": 1, "RS": 1}, "order": "F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:TE(layers.3) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc1.weight) F:TE(layers.3) B:TE(layers.3) B:TE(layers.3) B:TE(layers.2) B:TE(layers.2) B:TE(layers.1) B:TE(layers.1) B:TE(layers.0) B:TE(layers.0) F:RS(layers.3.fc2.weight)", "ok": false, "error": "cannot access local variable '_unsafe_view' where it is not associated with a value", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.5", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': None, 'weight_quantizer': None, 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': None, 'activation_dtype': __import__('torch').bfloat16, 'fp8': False, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}))
+
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.5", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': None, 'weight_quantizer': None, 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': None, 'activation_dtype': __import__('torch').bfloat16, 'fp8': False, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}))
+
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.5", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': None, 'weight_quantizer': None, 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': None, 'activation_dtype': __import__('torch').bfloat16, 'fp8': False, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}))
+
+[rank1]:I1028 23:23:19.965000 1002433 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank0]:I1028 23:23:20.299000 1002432 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank2]:I1028 23:23:20.332000 1002434 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank3]:I1028 23:23:20.333000 1002435 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "auto_overlap", "eager_ms": 9.167, "nodes": 349, "ns_hist": {"_c10d_functional": 54, "aten": 162, "python": 103, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 1, "_c10d_functional::all_gather_into_tensor_out": 6, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.1.fc2.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.1.fc1.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.2.fc2.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.1.fc1.weight) F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:_c10d_functional::all_gather_into_tensor_out(layers.3.fc2.weight) F:TE(layers.3) F:_c10d_functional::all_gather_into_tensor_out(layers.3.fc1.weight) F:TE(layers.3) B:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:RS(layers.3.fc2.weight) B:TE(layers.2) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:RS(layers.2.fc2.weight) B:TE(layers.1) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:RS(layers.1.fc2.weight) B:TE(layers.0) B:TE(layers.0) B:RS(layers.0.fc1.weight) B:RS(layers.0.fc2.weight)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 10.729, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:61: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  return _wait(funcol.all_gather_tensor(shard, 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py:66: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = funcol.reduce_scatter_tensor(grad.contiguous(), "sum", 0, dist.group.WORLD)
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 275, in main
+    gm = trace(step, params, x, te_ops)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 157, in trace
+    gm = make_fx(step, tracing_mode="fake", record_stack_traces=False)(params, x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3556, in wrapped
+    return make_fx_tracer.trace(f, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3432, in trace
+    return self._trace_inner(f, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 3382, in _trace_inner
+    t = dispatch_trace(
+        ^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_compile.py", line 54, in inner
+    return disable_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1652, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1923, in dispatch_trace
+    graph = tracer.trace(root, concrete_args)  # type: ignore[arg-type]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 943, in trace
+    (self.create_arg(fn(*args)),),
+                     ^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 783, in flatten_fn
+    tree_out = root_fn(*tree_args)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 2012, in wrapped
+    out = f(*tensors)  # type:ignore[call-arg]
+          ^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 125, in step
+    out = torch.func.functional_call(model, params, (x,))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_functorch/functional_call.py", line 154, in functional_call
+    return nn.utils.stateless._functional_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/utils/stateless.py", line 279, in _functional_call
+    return module(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 113, in forward
+    x = layer(x)
+        ^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 103, in forward
+    return x + self.fc2(torch.nn.functional.gelu(self.fc1(self.norm(x))))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 90, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 917, in module_call_wrapper
+    return self.call_module(mod, forward, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/experimental/proxy_tensor.py", line 1676, in call_module
+    return forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/_symbolic_trace.py", line 910, in forward
+    return _orig_module_call(mod, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+                                ^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1652, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 1904, in _linear_eager
+    return _Linear.apply(weight_tensor, inp, bias, fwd_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 1843, in forward
+    ) = _linear_forward_impl(fwd_args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py", line 532, in _linear_forward_impl
+    inputmat = input_quantizer(inputmat)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/quantized_tensor.py", line 465, in __call__
+    return self.quantize(tensor)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/quantized_tensor.py", line 442, in quantize
+    result = _QuantizeFunc.forward(None, tensor, self.quantize_impl)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/tensor/_quantization_helpers.py", line 82, in forward
+    return quantize_impl(tensor)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/tensor/mxfp8_tensor.py", line 123, in quantize_impl
+    return tex.quantize(tensor, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html
+RESULT {"prec": "mxfp8", "stage": "trace", "te_custom_ops": false, "ok": false, "error": "Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+RESULT {"prec": "mxfp8", "stage": "trace", "te_custom_ops": true, "ok": true, "trace_s": 0.1, "nodes": 335, "ns_hist": {"aten": 113, "python": 120, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:TE(layers.1) F:AG(layers.2.fc1.weight) F:AG(layers.2.fc1.weight) F:TE(layers.2) F:AG(layers.2.fc2.weight) F:AG(layers.2.fc2.weight) F:TE(layers.2) F:AG(layers.3.fc1.weight) F:AG(layers.3.fc1.weight) F:TE(layers.3) F:AG(layers.3.fc2.weight) F:AG(layers.3.fc2.weight) F:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc2.weight) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:TE(layers.2) B:RS(layers.2.fc2.weight) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:TE(layers.1) B:RS(layers.1.fc2.weight) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:TE(layers.0) B:RS(layers.0.fc2.weight) B:TE(layers.0) B:RS(layers.0.fc1.weight)", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "none", "eager_ms": 11.503, "nodes": 335, "ns_hist": {"aten": 113, "python": 120, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:TE(layers.1) F:AG(layers.2.fc1.weight) F:AG(layers.2.fc1.weight) F:TE(layers.2) F:AG(layers.2.fc2.weight) F:AG(layers.2.fc2.weight) F:TE(layers.2) F:AG(layers.3.fc1.weight) F:AG(layers.3.fc1.weight) F:TE(layers.3) F:AG(layers.3.fc2.weight) F:AG(layers.3.fc2.weight) F:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc2.weight) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:TE(layers.2) B:RS(layers.2.fc2.weight) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:TE(layers.1) B:RS(layers.1.fc2.weight) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:TE(layers.0) B:RS(layers.0.fc2.weight) B:TE(layers.0) B:RS(layers.0.fc1.weight)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 14.61, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.19", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'weight_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'activation_dtype': __import__('torch').bfloat16, 'fp8': True, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}));  getitem = None
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.19", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'weight_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'activation_dtype': __import__('torch').bfloat16, 'fp8': True, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}));  getitem = None
+
+
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.19", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'weight_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'activation_dtype': __import__('torch').bfloat16, 'fp8': True, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}));  getitem = None
+
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 298, in main
+    rec.update(**compare(run(g), ref))
+                         ^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/joint_capture_probe.py", line 291, in run
+    return g(dict(zip(names, flat)), x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 1008, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 513, in __call__
+    raise e.with_traceback(None)  # noqa: B904
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "bucket", "eager_ms": 11.503, "nodes": 388, "ns_hist": {"aten": 186, "python": 144, "_c10d_functional": 28, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"_c10d_functional::all_gather_into_tensor_out": 1, "RS": 1}, "order": "F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:TE(layers.3) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc1.weight) F:TE(layers.3) B:TE(layers.3) B:TE(layers.3) B:TE(layers.2) B:TE(layers.2) B:TE(layers.1) B:TE(layers.1) B:TE(layers.0) B:TE(layers.0) F:RS(layers.3.fc2.weight)", "ok": false, "error": "cannot access local variable '_unsafe_view' where it is not associated with a value", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+Traceback (most recent call last):
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/fx/graph_module.py", line 501, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.19", line 10, in forward
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+                                                                   ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable '_unsafe_view' where it is not associated with a value
+
+Call using an FX-traced Module, line 10 of the traced Module's generated forward function:
+    alias = torch.ops.aten.alias.default(getitem_1);  getitem_1 = None
+    wait_tensor_1 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view);  _unsafe_view = wait_tensor_1 = None
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    wait_tensor_3 = torch.ops._c10d_functional.wait_tensor.default(_unsafe_view_1);  _unsafe_view_1 = None
+
+    linear = torch.ops.transformer_engine_compile.linear.default(wait_tensor_3, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.TENSOR}), getitem, None, None, [], OpaqueValueBundle({'__kind__': _TensorOrQuantizedKind.NONE}), OpaqueValueBundle({'input_requires_grad': True, 'weight_requires_grad': True, 'bias_requires_grad': False, 'input_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'weight_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'output_quantizer': None, 'grad_input_quantizer': None, 'grad_weight_quantizer': None, 'grad_output_quantizer': _rebuild_quantizer(MXFP8Quantizer, (('rowwise_usage', True), ('columnwise_usage', True), ('internal', True), ('optimize_for_gemm', True), ('dtype', 7), ('with_2d_quantization', False))), 'activation_dtype': __import__('torch').bfloat16, 'fp8': True, 'fp8_calibration': False, 'fp8_output': False, 'save_original_input': False, 'backward_override': None, 'dgrad_use_split_accumulator': True, 'wgrad_use_split_accumulator': True, 'custom': False, 'debug': False, 'is_first_microbatch': None, 'cache_weight': False, 'skip_fp8_weight_update': None, 'parallel_mode': None, 'tp_group': None, 'tp_size': 1, 'tensor_parallel': False, 'sequence_parallel': False, 'symmetric_ar_type': None, 'backward_input_needs_gather': False, 'ub_name': None, 'ub_overlap_ag_fprop': False, 'ub_overlap_rs_fprop': False, 'ub_overlap_ag_dgrad': False, 'ub_overlap_rs_dgrad': False, 'ub_bulk_dgrad': False, 'ub_bulk_wgrad': False, 'is_fsdp2': False, 'fuse_wgrad_accumulation': False, 'cpu_offloading': False, 'is_grad_enabled': True}));  getitem = None
+
+[rank3]:I1028 23:23:21.651000 1002435 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank1]:I1028 23:23:21.651000 1002433 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank0]:I1028 23:23:21.654000 1002432 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+[rank2]:I1028 23:23:21.669000 1002434 torch/_inductor/fx_passes/fsdp.py:557] pre_bucket_fsdp_collectives: fsdp_groups=['0'], group_size=4, nNodes=1, bucket_cap_mb=51.5, all_gather 16->16, reduce_scatter 8->8, all_reduce 0->0
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "auto_overlap", "eager_ms": 11.503, "nodes": 389, "ns_hist": {"_c10d_functional": 48, "aten": 176, "python": 135, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 1, "_c10d_functional::all_gather_into_tensor_out": 3, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc2.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.2.fc1.weight) F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:_c10d_functional::all_gather_into_tensor_out(layers.3.fc2.weight) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:TE(layers.3) F:TE(layers.3) B:TE(layers.3) B:TE(layers.3) B:RS(layers.3.fc1.weight) B:RS(layers.3.fc2.weight) B:TE(layers.2) B:TE(layers.2) B:RS(layers.2.fc1.weight) B:RS(layers.2.fc2.weight) B:TE(layers.1) B:TE(layers.1) B:RS(layers.1.fc1.weight) B:RS(layers.1.fc2.weight) B:TE(layers.0) B:TE(layers.0) B:RS(layers.0.fc1.weight) B:RS(layers.0.fc2.weight)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 13.226, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+exit 0
+RESULT {"prec": "bf16", "stage": "trace", "te_custom_ops": false, "ok": false, "error": "Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+RESULT {"prec": "bf16", "stage": "trace", "te_custom_ops": true, "ok": true, "trace_s": 0.1, "nodes": 271, "ns_hist": {"aten": 81, "python": 88, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.we
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "none", "eager_ms": 9.167, "nodes": 271, "ns_hist": {"aten": 81, "python": 88, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:TE(l
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "bucket", "eager_ms": 9.167, "nodes": 324, "ns_hist": {"aten": 154, "python": 112, "_c10d_functional": 28, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"_c10d_functional::all_gather_into_tensor_out": 1, "RS": 1}, "order": "F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:TE(layers.3) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc1.weight) F:TE(layers.3) B:TE(layers.3) B:TE(layers
+RESULT {"prec": "bf16", "stage": "pass", "pass_name": "auto_overlap", "eager_ms": 9.167, "nodes": 349, "ns_hist": {"_c10d_functional": 54, "aten": 162, "python": 103, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 1, "_c10d_functional::all_gather_into_tensor_out": 6, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.1.fc2.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.1.fc1.weight) F:_c10d_functional::all_gather_into_t
+RESULT {"prec": "mxfp8", "stage": "trace", "te_custom_ops": false, "ok": false, "error": "Cannot access data pointer of Tensor (e.g. FakeTensor, FunctionalTensor). If you're using torch.compile/export/fx, it is likely that we are erroneously tracing into a custom kernel. To fix this, please wrap the custom kernel into an opaque custom op. Please see the following for details: https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4}
+RESULT {"prec": "mxfp8", "stage": "trace", "te_custom_ops": true, "ok": true, "trace_s": 0.1, "nodes": 335, "ns_hist": {"aten": 113, "python": 120, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "none", "eager_ms": 11.503, "nodes": 335, "ns_hist": {"aten": 113, "python": 120, "_c10d_functional": 72, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 16, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:AG(layers.0.fc1.weight) F:TE(layers.0) F:AG(layers.0.fc2.weight) F:AG(layers.0.fc2.weight) F:TE(layers.0) F:AG(layers.1.fc1.weight) F:AG(layers.1.fc1.weight) F:TE(layers.1) F:AG(layers.1.fc2.weight) F:AG(layers.1.fc2.weight) F:
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "bucket", "eager_ms": 11.503, "nodes": 388, "ns_hist": {"aten": 186, "python": 144, "_c10d_functional": 28, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"_c10d_functional::all_gather_into_tensor_out": 1, "RS": 1}, "order": "F:TE(layers.0) F:TE(layers.0) F:TE(layers.1) F:TE(layers.1) F:TE(layers.2) F:TE(layers.2) F:TE(layers.3) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc1.weight) F:TE(layers.3) B:TE(layers.3) B:TE(laye
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "auto_overlap", "eager_ms": 11.503, "nodes": 389, "ns_hist": {"_c10d_functional": 48, "aten": 176, "python": 135, "transformer_engine_compile": 16}, "te_ops": {"transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8}, "collectives": {"AG": 1, "_c10d_functional::all_gather_into_tensor_out": 3, "RS": 8}, "order": "F:AG(layers.0.fc1.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.0.fc2.weight) F:_c10d_functional::all_gather_into_tensor_out(layers.2.fc1.weight) F:TE(layers.0) F:TE(layers.0) F:TE(

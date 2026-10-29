@@ -1,0 +1,62 @@
+Job 8429861 on nvl72106-T17: fab7790cb Share the shape validation and per-tensor alignment computation between the padded and unpadded builders; drop GlobalLayout.get_peer_ranges; replace the uneven_shards bool with a ShardLayout enum (PADDED / UNPADDED)
+UV_CACHE_DIR=/lustre/fsw/portfolios/coreai/users/xiaodaz/.cache/uv
+PIP_BREAK_SYSTEM_PACKAGES=1
+PIP_CONSTRAINT=
+UV_VERSION=0.7.2
+UV_LINK_MODE=copy
+PIP_DEFAULT_TIMEOUT=100
+PIP_NO_CACHE_DIR=1
+UV_HTTP_TIMEOUT=120
+UV_PROJECT_ENVIRONMENT=/opt/venv
+pip 26.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+nemo-export-deploy 0.7.0+e0ff94d6b requires lightning<2.5.0, which is not installed.
+humming-kernels 0.1.6 requires pyelftools, which is not installed.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires opencv-python-headless>=4.13.0, which is not installed.
+s3fs 2026.4.0 requires fsspec==2026.4.0, but you have fsspec 2026.9.0 which is incompatible.
+leptonai 0.27.3 requires prometheus-fastapi-instrumentator==7.0.0, but you have prometheus-fastapi-instrumentator 8.1.0 which is incompatible.
+virtualenv 21.7.0 requires filelock<4,>=3.24.2; python_version >= "3.10", but you have filelock 4.2.4 which is incompatible.
+datasets 4.8.5 requires fsspec[http]<=2026.2.0,>=2023.1.0, but you have fsspec 2026.9.0 which is incompatible.
+nemo-export-deploy 0.7.0+e0ff94d6b requires pyarrow<21.0.0,>=20.0.0, but you have pyarrow 25.0.1 which is incompatible.
+mamba-ssm 2.3.2.post1 requires apache-tvm-ffi<=0.1.9, but you have apache-tvm-ffi 0.1.11 which is incompatible.
+quack-kernels 0.6.1 requires nvidia-cutlass-dsl==4.6.0, but you have nvidia-cutlass-dsl 4.5.0 which is incompatible.
+nvidia-modelopt 0.46.0rc1 requires setuptools>=80, but you have setuptools 78.1.0 which is incompatible.
+torchx 0.7.0 requires urllib3<1.27,>=1.21.1, but you have urllib3 2.7.0 which is incompatible.
+multi-storage-client 0.51.0 requires filelock<4,>=3.20.3, but you have filelock 4.2.4 which is incompatible.
+opentelemetry-exporter-otlp-proto-http 1.44.0 requires opentelemetry-sdk~=1.44.0, but you have opentelemetry-sdk 1.33.1 which is incompatible.
+opentelemetry-exporter-otlp-proto-grpc 1.44.0 requires opentelemetry-sdk~=1.44.0, but you have opentelemetry-sdk 1.33.1 which is incompatible.
+torchvision 0.27.0a0+499ca510.nv26.6.54250401 requires torch==2.13.0a0+8145d630e8.nv26.6.54250401, but you have torch 2.16.0.dev20261028+cu130 which is incompatible.
+opentelemetry-semantic-conventions-ai 0.5.1 requires opentelemetry-sdk<2,>=1.38.0, but you have opentelemetry-sdk 1.33.1 which is incompatible.
+opentelemetry-semantic-conventions-ai 0.5.1 requires opentelemetry-semantic-conventions>=0.59b0, but you have opentelemetry-semantic-conventions 0.54b1 which is incompatible.
+cuda-python 13.3.1 requires cuda-bindings~=13.3.1, but you have cuda-bindings 13.4.4 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires apache-tvm-ffi==0.1.9, but you have apache-tvm-ffi 0.1.11 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires fastapi[standard]<0.137.0,>=0.133.0, but you have fastapi 0.139.1 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires flashinfer-cubin==0.6.12, but you have flashinfer-cubin 0.6.8.post1 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires flashinfer-python==0.6.12, but you have flashinfer-python 0.6.8.post1 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires lark==1.2.2, but you have lark 1.3.1 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires numba==0.65.0, but you have numba 0.67.0rc1 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires nvidia-cutlass-dsl[cu13]==4.5.2, but you have nvidia-cutlass-dsl 4.5.0 which is incompatible.
+vllm 0.24.1.dev0+gee0da84ab.d20260722.cu133 requires tilelang==0.1.9, but you have tilelang 0.1.8 which is incompatible.
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+nightly torch 2.16.0.dev20261028+cu130 13.0 /lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/__init__.py
+Using CPython 3.12.3 interpreter at: /opt/venv/bin/python
+Resolved 2 packages in 28ms
+Installed 2 packages in 3.20s
+ + transformer-engine==2.20.2
+ + transformer-engine-cu13==2.20.2
+Collecting transformer-engine-torch==2.20.2
+  Downloading transformer_engine_torch-2.20.2.tar.gz (498 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: transformer-engine-torch
+  Building wheel for transformer-engine-torch (pyproject.toml): started
+  Building wheel for transformer-engine-torch (pyproject.toml): still running...
+  Building wheel for transformer-engine-torch (pyproject.toml): finished with status 'done'
+  Created wheel for transformer-engine-torch: filename=transformer_engine_torch-2.20.2-cp312-cp312-linux_aarch64.whl size=1136881 sha256=98b0dbc1484aaef748087dbac8b8aa0916b72104a963042c58ab414c24270bb7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-qy5sktr1/wheels/bc/ba/b7/bebbec781625b7c72f8920cb1952626333d8599e86515b0847
+Successfully built transformer-engine-torch
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.2
+[notice] To update, run: python -m pip install --upgrade pip
+ls: cannot access '/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/*.so': No such file or directory

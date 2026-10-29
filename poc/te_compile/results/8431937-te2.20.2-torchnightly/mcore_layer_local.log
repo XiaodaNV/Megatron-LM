@@ -1,0 +1,191 @@
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:22:41] nvl72018-T14:3001307:3001307 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/utils.py:4542: UserWarning: Mismatch dtype between input and weight: input dtype = c10::BFloat16, weight dtype = float, Cannot dispatch to fused implementation. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/layer_norm.cpp:350.)
+  return node.target(*args, **kwargs)  # type: ignore[operator]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:2971: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.Generator.set_state.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+RESULT {"case": "mcore_layer_local", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 11, "graph_break_count": 10, "op_count": 35, "break_reasons": ["step_unsupported", "step_unsupported", "Attempted to call function marked as skipped Explanation: Dynamo does not know how to trace the Python builtin `_warnings.warn`. Hint: If you are attempting to call a logging function (e.g. `_warnings.warn`), you can try adding it to `torch._dynamo.config.reorderable_logging_functions`. Hint: Please file an issue on GitHub so the PyTorch team can add support for it. Developer debug context: module", "Attempted to call function marked as skipped Explanation: Dynamo does not know how to trace the Python builtin `_warnings.warn`. Hint: If you are attempting to call a logging function (e.g. `_warnings.warn`), you can try adding it to `torch._dynamo.config.reorderable_logging_functions`. Hint: Please file an issue on GitHub so the PyTorch team can add support for it. Developer debug context: module"], "ok": true, "wall_s": 14.3}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/knobs.py:504: UserWarning: TRITON_DEFAULT_FP_FUSION is unset: defaulting to FP fusion ENABLED for backward compatibility in Triton 3.9. The default will change to DISABLED in Triton 3.10; set TRITON_DEFAULT_FP_FUSION=1 to keep fusion enabled or =0 to adopt the new default early and silence this warning.
+  warn_once(FP_FUSION_DEFAULT_WARNING)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/tensor_parallel/layers.py:847: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:702.)
+  grad_input = grad_output.matmul(weight)
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 514, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 467, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 407, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 661, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1374, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Attempted to call function marked as skipped
+  Explanation: Dynamo developers have intentionally marked that the function `get_rng_state` in file `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/random.py` should not be traced.
+  Hint: Avoid calling the function `get_rng_state`.
+  Hint: Apply `@torch._dynamo.dont_skip_tracing` to the function `get_rng_state` to force tracing into the function. More graph breaks may occur as a result of attempting to trace into the function.
+  Hint: Please file an issue to PyTorch.
+
+  Developer debug context: module: torch.cuda.random, qualname: get_rng_state, skip reason: file matches MOD_SKIPLIST (/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda)
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0007.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+                             ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1706, in forward_pre_attn_and_core_attn
+    core_attn_out = apply_module(self.core_attention)(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/dot_product_attention.py", line 231, in forward
+    with tensor_parallel.get_cuda_rng_tracker().fork():
+  File "/usr/lib/python3.12/contextlib.py", line 111, in __init__
+    self.__doc__ = doc
+    ^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/tensor_parallel/random.py", line 325, in fork
+    orig_cuda_rng_state = _get_cuda_rng_state(graph_safe=self.use_cudagraphable_rng)
+                          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/tensor_parallel/random.py", line 125, in _get_cuda_rng_state
+    return torch.cuda.random.get_rng_state(device=device)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_local", "prec": "bf16", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Attempted to call function marked as skipped Explanation: Dynamo developers have intentionally marked that the function `get_rng_state` in file `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/random.py` should not be traced. Hint: Avoid calling the function `get_rng_state`. Hint: Apply `@torch._dynamo.dont_skip_tracing` to the function `get_rng_state` to force tracing into the function. More graph breaks may occur as a result of attempting to trace into the function. Hint: Please file an issue to PyTorch. Developer debug context: module: torch.cuda.random, qualname: get_rng_state, skip reason: file matches MOD_SKIPLIST (/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda) For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0007.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^ Fi", "te": "2.20.2", "wall_s": 3.9}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:2971: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.Generator.set_state.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+RESULT {"case": "mcore_layer_local", "prec": "bf16", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 3.7, "out_rel_err": 0.0014653772814199328, "grad_rel_err": {"layer.input_layernorm.weight": 0.00464, "layer.self_attention.linear_proj.weight": 0.00279, "layer.self_attention.linear_qkv.weight": 0.00447, "layer.pre_mlp_layernorm.weight": 0.00408, "layer.mlp.linear_fc1.weight": 0.00422, "layer.mlp.linear_fc2.weight": 0.00363, "input0": 0.00207}, "missing_grads": [], "dynamo_graphs": 11, "fw_graphs": 11, "bw_graphs": 10, "fw_ops": {"aten": 65, "python:_operator": 5}, "bw_ops": {"aten": 100, "python:_operator": 2}, "fw_nonaten": {}, "bw_nonaten": {}, "ok": true, "wall_s": 4.2}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 514, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 467, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 407, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 661, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/eval_frame.py", line 1374, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Attempted to call function marked as skipped
+  Explanation: Dynamo developers have intentionally marked that the function `get_rng_state` in file `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/random.py` should not be traced.
+  Hint: Avoid calling the function `get_rng_state`.
+  Hint: Apply `@torch._dynamo.dont_skip_tracing` to the function `get_rng_state` to force tracing into the function. More graph breaks may occur as a result of attempting to trace into the function.
+  Hint: Please file an issue to PyTorch.
+
+  Developer debug context: module: torch.cuda.random, qualname: get_rng_state, skip reason: file matches MOD_SKIPLIST (/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda)
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0007.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+                             ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1706, in forward_pre_attn_and_core_attn
+    core_attn_out = apply_module(self.core_attention)(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/dot_product_attention.py", line 231, in forward
+    with tensor_parallel.get_cuda_rng_tracker().fork():
+  File "/usr/lib/python3.12/contextlib.py", line 111, in __init__
+    self.__doc__ = doc
+    ^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/tensor_parallel/random.py", line 325, in fork
+    orig_cuda_rng_state = _get_cuda_rng_state(graph_safe=self.use_cudagraphable_rng)
+                          ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/tensor_parallel/random.py", line 125, in _get_cuda_rng_state
+    return torch.cuda.random.get_rng_state(device=device)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_local", "prec": "bf16", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Attempted to call function marked as skipped Explanation: Dynamo developers have intentionally marked that the function `get_rng_state` in file `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/random.py` should not be traced. Hint: Avoid calling the function `get_rng_state`. Hint: Apply `@torch._dynamo.dont_skip_tracing` to the function `get_rng_state` to force tracing into the function. More graph breaks may occur as a result of attempting to trace into the function. Hint: Please file an issue to PyTorch. Developer debug context: module: torch.cuda.random, qualname: get_rng_state, skip reason: file matches MOD_SKIPLIST (/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda) For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0007.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^ Fi", "te": "2.20.2", "wall_s": 0.4}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8", "mode": "explain", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8", "mode": "aot_eager", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8", "mode": "partial", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8", "mode": "inductor", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8_param", "mode": "explain", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8_param", "mode": "aot_eager", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8_param", "mode": "partial", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}
+RESULT {"case": "mcore_layer_local", "prec": "mxfp8_param", "mode": "inductor", "ok": null, "skipped": "local spec has no MXFP8 path", "wall_s": 0.0}

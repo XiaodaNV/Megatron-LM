@@ -1,0 +1,3 @@
+{"prec": "bf16", "stage": "eager", "sharded": 16, "params": 24, "ok": true, "eager_ms": 30.856, "eager_peak_gb": 1.93, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer"}
+{"prec": "bf16", "stage": "trace", "ok": false, "error": "trying to pop from empty mode stack", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer"}
+{"prec": "mxfp8", "stage": "eager", "sharded": 16, "params": 24, "ok": true, "eager_ms": 52.931, "eager_peak_gb": 2.31, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer"}

@@ -1,0 +1,7 @@
+Job 8429429 on nvl72004-T03: fab7790cb Share the shape validation and per-tensor alignment computation between the padded and unpadded builders; drop GlobalLayout.get_peer_ranges; replace the uneven_shards bool with a ShardLayout enum (PADDED / UNPADDED)
+Using CPython 3.12.3 interpreter at: /opt/venv/bin/python
+Resolved in 14ms
+Checked in 1ms
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+nightly torch 2.13.0a0+8145d630e8.nv26.06 13.3 /usr/local/lib/python3.12/dist-packages/torch/__init__.py

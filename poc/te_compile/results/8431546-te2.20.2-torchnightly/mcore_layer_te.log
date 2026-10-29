@@ -1,0 +1,485 @@
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-28 22:11:59] nvl72176-T16:462154:462154 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:11:59] nvl72176-T16:462154:462154 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:11:59] nvl72176-T16:462154:462154 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:11:59] nvl72176-T16:462154:462154 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:12:00] nvl72176-T16:462154:462154 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:12:00] nvl72176-T16:462154:462154 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:12:00] nvl72176-T16:462154:462154 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:12:00] nvl72176-T16:462154:462154 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 44, in <module>
+    from fla.modules.convolution import causal_conv1d
+  File "/opt/venv/lib/python3.12/site-packages/fla/modules/__init__.py", line 2, in <module>
+    from fla.modules.convolution import ImplicitLongConvolution, LongConvolution, ShortConvolution
+  File "/opt/venv/lib/python3.12/site-packages/fla/modules/convolution.py", line 4, in <module>
+    from fla.modules.conv import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/modules/conv/__init__.py", line 3, in <module>
+    from .causal_conv1d import causal_conv1d
+  File "/opt/venv/lib/python3.12/site-packages/fla/modules/conv/causal_conv1d.py", line 7, in <module>
+    from fla.ops.cp import FLACPContext
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "explain", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 12.7}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "aot_eager", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.1}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "partial", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "inductor", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "explain", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "aot_eager", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "partial", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "inductor", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "explain", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "aot_eager", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "partial", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 426, in run_mode
+    m, make_inputs = CASES[case](prec)
+                     ^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 241, in case_mcore_layer_te
+    return _mcore_layer(prec, "te")
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 226, in _mcore_layer
+    cfg = TransformerConfig(num_layers=1, hidden_size=H, ffn_hidden_size=F,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 367, in __init__
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py", line 1809, in __post_init__
+    from megatron.core.models.gpt.experimental_attention_variant_module_specs import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/models/gpt/experimental_attention_variant_module_specs.py", line 8, in <module>
+    from megatron.core.ssm.gated_delta_net import GatedDeltaNet, GatedDeltaNet2, GatedDeltaNetSubmodules
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/__init__.py", line 10, in <module>
+    from megatron.core.ssm.gated_delta_net.common import (
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/ssm/gated_delta_net/common.py", line 46, in <module>
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/__init__.py", line 8, in <module>
+    from .gated_delta_rule import chunk_gated_delta_rule, fused_recurrent_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/__init__.py", line 1, in <module>
+    from .chunk import chunk_gated_delta_rule
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/gated_delta_rule/chunk.py", line 12, in <module>
+    from fla.ops.cp.chunk_delta_h import (
+  File "/opt/venv/lib/python3.12/site-packages/fla/ops/cp/chunk_delta_h.py", line 23, in <module>
+    @triton.autotune(
+     ^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 486, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/runtime/autotuner.py", line 56, in __init__
+    raise ValueError(f"{param} contains names that are not kernel arguments: "
+ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "inductor", "ok": false, "error": "ValueError: key contains names that are not kernel arguments: STAGE. Valid argument names are: k, v, w, g, gk, hm, cu_seqlens, T, H, K, V, BT, BV, USE_G, USE_GK, USE_EXP2, IS_VARLEN.", "te": "2.20.2", "wall_s": 0.0}

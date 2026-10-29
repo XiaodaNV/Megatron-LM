@@ -1,0 +1,435 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+NCCL version 2.30.7+cuda13.3
+
+[2026-10-28 20:56:03] nvl72023-T18:614593:614593 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614593:614593 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614593:614593 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614593:614593 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614594:614594 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614594:614594 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614594:614594 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:56:03] nvl72023-T18:614594:614594 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 1, "graph_break_count": 0, "op_count": 2, "break_reasons": [], "ok": true, "wall_s": 3.2}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 454, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 394, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function _linear_eager at 0xfffeee2e36a0>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 305, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function _linear_eager at 0xfffeee2e36a0> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 305, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2561, in forward out, new_weight_workspace = _linear_eager( File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py\", line 77, in wrapper return disabled_f(*args, **kwargs) Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 0.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "partial", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "compile_s": 0.5, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3}, "bw_ops": {"_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.5}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 454, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 394, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function _linear_eager at 0xfffeee2e36a0>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 305, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function _linear_eager at 0xfffeee2e36a0> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 305, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2561, in forward out, new_weight_workspace = _linear_eager( File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py\", line 77, in wrapper return disabled_f(*args, **kwargs) Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 0.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 1, "graph_break_count": 0, "op_count": 2, "break_reasons": [], "ok": true, "wall_s": 1.2}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 454, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 394, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function _linear_eager at 0xfffeee2e36a0>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 305, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function _linear_eager at 0xfffeee2e36a0> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 305, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2561, in forward out, new_weight_workspace = _linear_eager( File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py\", line 77, in wrapper return disabled_f(*args, **kwargs) Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 0.2}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "partial", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "compile_s": 0.5, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3}, "bw_ops": {"_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.5}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 454, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 394, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function _linear_eager at 0xfffeee2e36a0>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 305, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function _linear_eager at 0xfffeee2e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function _linear_eager at 0xfffeee2e36a0> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 305, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2561, in forward out, new_weight_workspace = _linear_eager( File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py\", line 77, in wrapper return disabled_f(*args, **kwargs) Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 0.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "explain", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "aot_eager", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "partial", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "inductor", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}

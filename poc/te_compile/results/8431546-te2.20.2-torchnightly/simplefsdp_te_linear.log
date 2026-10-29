@@ -1,0 +1,303 @@
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-28 22:09:04] nvl72176-T16:458980:458980 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Pr
+[2026-10-28 22:09:04] nvl72176-T16:458981:458981 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+otocol not supported errno 93
+
+[2026-10-28 22:09:04] nvl72176-T16:458981:458981 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Pr
+[2026-10-28 22:09:04] nvl72176-T16:458980:458980 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+otocol not supported errno 93
+
+[2026-10-28 22:09:04] nvl72176-T16:458980:458980 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Pr
+[2026-10-28 22:09:04] nvl72176-T16:458981:458981 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+otocol not supported errno 93
+
+[2026-10-28 22:09:04] nvl72176-T16:458981:458981 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458980:458980 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458980:458980 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458981:458981 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458980:458980 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458981:458981 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458980:458980 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458981:458981 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458980:458980 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:05] nvl72176-T16:458981:458981 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 1, "graph_break_count": 0, "op_count": 5, "break_reasons": [], "ok": true, "wall_s": 2.9}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "aot_eager", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.6, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3, "transformer_engine_compile": 1, "python:_operator": 1}, "bw_ops": {"transformer_engine_compile": 2, "python:_operator": 3, "_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1, "transformer_engine_compile::linear": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "transformer_engine_compile::linear": 1, "transformer_engine_compile::linear_backward": 1, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.6}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.6, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3, "transformer_engine_compile": 1, "python:_operator": 1}, "bw_ops": {"transformer_engine_compile": 2, "python:_operator": 3, "_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1, "transformer_engine_compile::linear": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "transformer_engine_compile::linear": 1, "transformer_engine_compile::linear_backward": 1, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.6}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/knobs.py:504: UserWarning: TRITON_DEFAULT_FP_FUSION is unset: defaulting to FP fusion ENABLED for backward compatibility in Triton 3.9. The default will change to DISABLED in Triton 3.10; set TRITON_DEFAULT_FP_FUSION=1 to keep fusion enabled or =0 to adopt the new default early and silence this warning.
+  warn_once(FP_FUSION_DEFAULT_WARNING)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/knobs.py:504: UserWarning: TRITON_DEFAULT_FP_FUSION is unset: defaulting to FP fusion ENABLED for backward compatibility in Triton 3.9. The default will change to DISABLED in Triton 3.10; set TRITON_DEFAULT_FP_FUSION=1 to keep fusion enabled or =0 to adopt the new default early and silence this warning.
+  warn_once(FP_FUSION_DEFAULT_WARNING)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "inductor", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 5.9, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "ok": true, "wall_s": 5.9}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 1, "graph_break_count": 0, "op_count": 5, "break_reasons": [], "ok": true, "wall_s": 0.9}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "aot_eager", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.7, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3, "transformer_engine_compile": 1, "python:_operator": 7}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3, "_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1, "transformer_engine_compile::linear": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "transformer_engine_compile::linear_backward": 1, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.8}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.7, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"_c10d_functional": 3, "transformer_engine_compile": 1, "python:_operator": 7}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3, "_c10d_functional": 3}, "fw_nonaten": {"_c10d_functional::wait_tensor": 2, "_c10d_functional::all_gather_into_tensor": 1, "transformer_engine_compile::linear": 1}, "bw_nonaten": {"_c10d_functional::wait_tensor": 2, "transformer_engine_compile::linear_backward": 1, "_c10d_functional::reduce_scatter_tensor": 1}, "ok": true, "wall_s": 0.8}
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:255: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  out = funcol.wait_tensor(funcol.all_gather_tensor(t.contiguous(), 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py:265: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  funcol.reduce_scatter_tensor(t.contiguous(), "sum", 0, dist.group.WORLD))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "inductor", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 1.1, "out_rel_err": 0.0, "grad_rel_err": {"weight_shard": 0.0, "inner.bias": 0.0, "input0": 0.0}, "missing_grads": [], "ok": true, "wall_s": 1.1}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "explain", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "aot_eager", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "partial", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8_param", "mode": "inductor", "ok": null, "skipped": "see case simplefsdp_mxfp8_param", "wall_s": 0.0}

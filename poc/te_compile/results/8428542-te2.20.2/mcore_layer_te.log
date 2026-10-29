@@ -1,0 +1,687 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 4, "graph_break_count": 3, "op_count": 11, "break_reasons": ["Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function _linear_eager at 0xfffe506e36a0>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function _linear_eager at 0xfffe506e36a0> For more details about this graph break, please visit: https://meta-pytorch.github.io/com"], "ok": true, "wall_s": 10.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W1028 20:24:56.124666504 ProcessGroupNCCL.cpp:5324] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+NCCL version 2.30.7+cuda13.3
+
+[2026-10-28 20:24:56] nvl72118-T16:1215182:1215182 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:24:56] nvl72118-T16:1215182:1215182 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:24:56] nvl72118-T16:1215182:1215182 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:24:56] nvl72118-T16:1215182:1215182 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 2.5}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "partial", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "compile_s": 2.7, "out_rel_err": 0.0014625177718698978, "grad_rel_err": {"layer.self_attention.linear_proj.weight": 0.00279, "layer.self_attention.linear_qkv.layer_norm_weight": 0.00507, "layer.self_attention.linear_qkv.weight": 0.00433, "layer.mlp.linear_fc1.layer_norm_weight": 0.00452, "layer.mlp.linear_fc1.weight": 0.00422, "layer.mlp.linear_fc2.weight": 0.00363, "input0": 0.00206}, "missing_grads": [], "dynamo_graphs": 4, "fw_graphs": 4, "bw_graphs": 4, "fw_ops": {"aten": 12, "python:_operator": 5}, "bw_ops": {"aten": 17, "python:_operator": 2}, "fw_nonaten": {}, "bw_nonaten": {}, "ok": true, "wall_s": 2.8}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "bf16", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 0.2}
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2348: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.TensorBase._make_wrapper_subclass.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 414, in run_mode
+    ex = torch._dynamo.explain(f)(*inputs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1748, in inner
+    opt_f(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1095, in compile_wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 412, in f
+    return m(*xs)
+           ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+                                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in torch_dynamo_resume_in_forward_at_1790
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1781, in forward_post_core_attn
+    output, bias = apply_module(self.linear_proj)(core_attn_out)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1470, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2567, in forward
+    new_weight_workspace = new_weight_workspace.detach()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 803, in detach
+    return type(self).make_like(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 1067, in make_like
+    kwargs = tensor.get_metadata()
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 1069, in torch_dynamo_resume_in_make_like_at_1067
+    return cls(
+           ^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/mxfp8_tensor.py", line 266, in __new__
+    return super().__new__(
+           ^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/storage/mxfp8_tensor_storage.py", line 105, in __new__
+    instance = super().__new__(cls, *args, fake_dtype=fake_dtype, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 735, in __new__
+    instance = torch.Tensor._make_wrapper_subclass(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2506, in __call__
+    result = self._torchdynamo_orig_backend(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2217, in __call__
+    result = self._inner_convert(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 772, in __call__
+    result = _compile(
+             ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2066, in _compile
+    raise InternalTorchDynamoError(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2001, in _compile
+    guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_utils_internal.py", line 96, in wrapper_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1611, in compile_inner
+    result = _compile_inner(code, one_graph, hooks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1670, in _compile_inner
+    dynamo_output = compile_frame(
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1516, in compile_frame
+    bytecode, tracer_output = transform_code_object(code, transform)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/bytecode_transformation.py", line 1626, in transform_code_object
+    tracer_output = transformations(instructions, code_options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1488, in transform
+    tracer_output = trace_frame(
+                    ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 367, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 949, in trace_frame
+    run_tracer()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 930, in run_tracer
+    tracer.run()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1809, in run
+    while self.step():
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1476, in step
+    self.dispatch_table[inst.opcode](self, inst)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1013, in wrapper
+    return inner_fn(self, inst)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 2944, in STORE_ATTR
+    VariableTracker.build(self, setattr).call_function(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1590, in call_function
+    return handler(tx, args, kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1106, in <lambda>
+    a.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 108, in realize
+    self._cache.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 45, in realize
+    self.vt = builder.VariableBuilder(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 488, in __call__
+    return self._call_impl(value)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 525, in _call_impl
+    vt = self._wrap(value)
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 813, in _wrap
+    return self.wrap_tensor(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2439, in wrap_tensor
+    self.assert_not_wrapped_by_this_graph(value)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2351, in assert_not_wrapped_by_this_graph
+    if is_fake(value) and maybe_get_fake_mode(value) is self.tx.fake_mode:
+       ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_subclasses/fake_tensor.py", line 210, in is_fake
+    attrs, _ = type(x).__tensor_flatten__(x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 246, in __tensor_flatten__
+    present = [attr for attr, _ in self._INNER_TENSORS if getattr(self, attr) is not None]
+                                                          ^^^^^^^^^^^^^^^^^^^
+torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data'
+
+from user code:
+   File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 745, in torch_dynamo_resume_in___new___at_735
+    instance._requires_grad = requires_grad
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "explain", "ok": false, "error": "torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data' from user code: File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py\", line 745, in torch_dynamo_resume_in___new___at_735 instance._requires_grad = requires_grad Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 2.6}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 0.2}
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "partial", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "compile_s": 2.8, "out_rel_err": 0.0031358974520117044, "grad_rel_err": {"layer.self_attention.linear_proj.weight": 0.0148, "layer.self_attention.linear_qkv.layer_norm_weight": 0.02821, "layer.self_attention.linear_qkv.weight": 0.02945, "layer.mlp.linear_fc1.layer_norm_weight": 0.01406, "layer.mlp.linear_fc1.weight": 0.01398, "layer.mlp.linear_fc2.weight": 0.01179, "input0": 0.00483}, "missing_grads": [], "dynamo_graphs": 4, "fw_graphs": 4, "bw_graphs": 4, "fw_ops": {"aten": 12, "python:_operator": 5}, "bw_ops": {"aten": 17, "python:_operator": 2}, "fw_nonaten": {}, "bw_nonaten": {}, "ok": true, "wall_s": 2.9}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 0.2}
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 4, "graph_break_count": 3, "op_count": 11, "break_reasons": ["torch.* op returned non-Tensor Explanation: torch.* ops that return a non-Tensor cannot be traced into the Dynamo FX graph output Developer debug context: example_value type: MXFP8Quantizer; op: call_method; target: _get_quantizer For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0208.html"], "ok": true, "wall_s": 2.7}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 0.2}
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py:109: UserWarning: Falling back to eager execution under torch.compile: detecting packed q/k/v that were not declared via qkv_layer/kv_layer is unsupported on the compiled path (graph-breaks under fullgraph=True).
+  return disabled_report_and_run(reason, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "partial", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "compile_s": 3.0, "out_rel_err": 0.0031122618820518255, "grad_rel_err": {"layer.self_attention.linear_proj.weight": 0.01482, "layer.self_attention.linear_qkv.layer_norm_weight": 0.02945, "layer.self_attention.linear_qkv.weight": 0.02998, "layer.mlp.linear_fc1.layer_norm_weight": 0.01447, "layer.mlp.linear_fc1.weight": 0.01397, "layer.mlp.linear_fc2.weight": 0.0117, "input0": 0.00482}, "missing_grads": [], "dynamo_graphs": 4, "fw_graphs": 4, "bw_graphs": 4, "fw_ops": {"aten": 12, "python:_operator": 5}, "bw_ops": {"aten": 17, "python:_operator": 2}, "fw_nonaten": {}, "bw_nonaten": {}, "ok": true, "wall_s": 3.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function
+  Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None)
+  Hint: Remove the `torch.compiler.disable` call
+
+  Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80>
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 211, in forward
+    out = self.layer(hidden_states=x, attention_mask=None)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py", line 416, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 1137, in forward
+    hidden_states, context = self._forward_attention(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py", line 843, in _forward_attention
+    attention_output_with_bias = self.self_attention(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1790, in forward
+    return self.forward_post_core_attn(self.forward_pre_attn_and_core_attn(*args, **kwargs))
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 1507, in forward_pre_attn_and_core_attn
+    qkv_output = self.get_query_key_value_tensors(
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/attention.py", line 2002, in get_query_key_value_tensors
+    mixed_qkv, _ = apply_module(self.linear_qkv)(hidden_states)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/extensions/transformer_engine.py", line 1726, in forward
+    out = super().forward(x, is_first_microbatch=_is_first_microbatch)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "mcore_layer_te", "prec": "mxfp8_param", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Skip calling `torch.compiler.disable()`d function Explanation: Skip calling function `<function LayerNormLinear.forward at 0xfffe506e1f80>` since it was wrapped with `torch.compiler.disable` (reason: None) Hint: Remove the `torch.compiler.disable` call Developer debug context: <function LayerNormLinear.forward at 0xfffe506e1f80> For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0098.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 211, in forward out = self.layer(hidden_states=x, attention_mask=None) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/module.py\", line 416, in __call__ return super().__call__(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1778, in _wrapped_call_impl return self._call_impl(*args, **kwargs) File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1789, in _call_impl return forward_call(*args, **kwargs) File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_layer.py\", line 1137, in forward hidden_states, ", "te": "2.20.2", "wall_s": 0.1}

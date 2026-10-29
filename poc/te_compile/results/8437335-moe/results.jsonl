@@ -1,0 +1,1 @@
+{"prec": "bf16", "stage": "eager", "sharded": 76, "params": 84, "ok": false, "error": "'OpaqueFunction' object has no attribute '_validate_or_alloc_output'", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer_moe8", "deterministic": true}

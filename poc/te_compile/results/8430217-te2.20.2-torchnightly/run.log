@@ -1,0 +1,11 @@
+Job 8430217 on nvl72005-T16: fab7790cb Share the shape validation and per-tensor alignment computation between the padded and unpadded builders; drop GlobalLayout.get_peer_ranges; replace the uneven_shards bool with a ShardLayout enum (PADDED / UNPADDED)
+UV_CACHE_DIR=/lustre/fsw/portfolios/coreai/users/xiaodaz/.cache/uv
+PIP_BREAK_SYSTEM_PACKAGES=1
+PIP_CONSTRAINT=
+UV_VERSION=0.7.2
+UV_LINK_MODE=copy
+PIP_DEFAULT_TIMEOUT=100
+PIP_NO_CACHE_DIR=1
+UV_HTTP_TIMEOUT=120
+UV_PROJECT_ENVIRONMENT=/opt/venv
+pip 26.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)

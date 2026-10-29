@@ -1082,7 +1082,9 @@ class TEGroupedMLP(MegatronModule):
                 tokens_per_expert = tokens_per_expert.to(
                     device=permuted_local_hidden_states.device, dtype=torch.int64, non_blocking=True
                 )
-        elif isinstance(tokens_per_expert, torch.Tensor):
+        elif isinstance(tokens_per_expert, torch.Tensor) and not torch.compiler.is_compiling():
+            # Under graph capture keep the tensor: TE's GroupedLinear accepts tensor m_splits and
+            # the host copy would be a data-dependent read of a traced tensor.
             tokens_per_expert = tokens_per_expert.tolist()
 
         if self.config.moe_apply_probs_on_input:

@@ -1,0 +1,404 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+NCCL version 2.30.7+cuda13.3
+
+[2026-10-28 20:25:25] nvl72118-T16:1215915:1215915 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error 
+[2026-10-28 20:25:25] nvl72118-T16:1215914:1215914 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215915:1215915 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215914:1215914 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215915:1215915 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215914:1215914 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215915:1215915 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:25] nvl72118-T16:1215914:1215914 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 1, "graph_break_count": 0, "op_count": 3, "break_reasons": [], "ok": true, "wall_s": 2.7}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 423, in run_mode
+    ref_out = fwd_bwd(m, inputs, prec).detach().float().clone()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 279, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+                                ^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1353, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1904, in _linear_eager
+    return _Linear.apply(weight_tensor, inp, bias, fwd_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 625, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1843, in forward
+    ) = _linear_forward_impl(fwd_args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 632, in _linear_forward_impl
+    gemm_out, *_, reduce_scatter_out = general_gemm(
+                                       ^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 301, in general_gemm
+    out, bias_grad, gelu_input, extra_output = tex.generic_gemm(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "aot_eager", "ok": false, "error": "RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 423, in run_mode
+    ref_out = fwd_bwd(m, inputs, prec).detach().float().clone()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 279, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+                                ^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1353, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1904, in _linear_eager
+    return _Linear.apply(weight_tensor, inp, bias, fwd_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 625, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1843, in forward
+    ) = _linear_forward_impl(fwd_args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 632, in _linear_forward_impl
+    gemm_out, *_, reduce_scatter_out = general_gemm(
+                                       ^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 301, in general_gemm
+    out, bias_grad, gelu_input, extra_output = tex.generic_gemm(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "partial", "ok": false, "error": "RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function", "te": "2.20.2", "wall_s": 0.0}
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 423, in run_mode
+    ref_out = fwd_bwd(m, inputs, prec).detach().float().clone()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 279, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2561, in forward
+    out, new_weight_workspace = _linear_eager(
+                                ^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/jit.py", line 77, in wrapper
+    return disabled_f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1353, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1904, in _linear_eager
+    return _Linear.apply(weight_tensor, inp, bias, fwd_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 625, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1843, in forward
+    ) = _linear_forward_impl(fwd_args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 632, in _linear_forward_impl
+    gemm_out, *_, reduce_scatter_out = general_gemm(
+                                       ^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/cpp_extensions/gemm.py", line 301, in general_gemm
+    out, bias_grad, gelu_input, extra_output = tex.generic_gemm(*args, **kwargs)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function
+RESULT {"case": "simplefsdp_te_linear", "prec": "bf16", "mode": "inductor", "ok": false, "error": "RuntimeError: /TransformerEngine/transformer_engine/common/gemm/cublaslt_gemm.cu:784 in function cublas_gemm: cuBLAS Error: an unsupported value or parameter was passed to the function", "te": "2.20.2", "wall_s": 0.0}
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py:53: UserWarning: Transformer Engine torch.compile support is disabled: could not register OpaqueValueBundle as an opaque type (cannot import name 'is_opaque_constant_type' from 'torch._library.opaque_object' (/usr/local/lib/python3.12/dist-packages/torch/_library/opaque_object.py)); use a newer PyTorch build. Modules will fall back to eager execution under torch.compile, i.e. a graph break, which is incompatible with fullgraph=True.
+  _comptime(lambda ctx: warnings.warn(ctx.get_local("msg").as_python_constant()))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "explain", "te": "2.20.2", "torch": "2.13.0a0+8145d630e8.nv26.06", "graph_count": 1, "graph_break_count": 0, "op_count": 3, "break_reasons": [], "ok": true, "wall_s": 1.0}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 423, in run_mode
+    ref_out = fwd_bwd(m, inputs, prec).detach().float().clone()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 379, in fwd_bwd
+    out.backward(gout)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py", line 913, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 325, in apply
+    return user_fn(self, *args)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1881, in backward
+    result = _linear_backward_impl(bwd_args) + (None,)  # fwd_args grad slot
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 1272, in _linear_backward_impl
+    ) = TransformerEngineBaseModule.grad_output_preprocess(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/base.py", line 1786, in grad_output_preprocess
+    grad_bias, grad_output = tex.bgrad_quantize(grad_output, quantizer)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /TransformerEngine/transformer_engine/common/cast/dispatch/../mxfp8/quantize_mxfp8.cuh:1013 in function quantize: CUDA Error: an illegal memory access was encountered
+RESULT {"case": "simplefsdp_te_linear", "prec": "mxfp8", "mode": "aot_eager", "ok": false, "error": "RuntimeError: /TransformerEngine/transformer_engine/common/cast/dispatch/../mxfp8/quantize_mxfp8.cuh:1013 in function quantize: CUDA Error: an illegal memory access was encountered", "te": "2.20.2", "wall_s": 0.2}
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in <module>
+[rank1]:     main()
+[rank1]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 495, in main
+[rank1]:     dist.barrier()
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 5292, in barrier
+[rank1]:     work = group.barrier(opts=opts)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank1]: Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+[rank1]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank1]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 501, in <module>
+[rank0]:     main()
+[rank0]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 495, in main
+[rank0]:     dist.barrier()
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 5292, in barrier
+[rank0]:     work = group.barrier(opts=opts)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank0]: Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+[rank0]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank0]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+
+[rank0]:[W1028 20:25:28.091047877 ProcessGroupNCCL.cpp:1647] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] misc/strongstream.cc:424 (ncclStrongStreamSynchronize) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] init.cc:2742 (commDestroySync) NCCL WARN commDestroySync: comm 0xfc376c0 rank 0 sync hostStream error 1
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] misc/strongstream.cc:424 (ncclStrongStreamSynchronize) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] init.cc:2745 (commDestroySync) NCCL WARN commDestroySync: comm 0xfc376c0 rank 0 sync deviceStream error 1
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] allocator.cc:132 (ncclMemFree) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215914:1215974 [0] init.cc:2869 (commReclaim) NCCL WARN commReclaim: cleanup comm 0xfc376c0 rank 0 failed in destroy/abort, error 1
+[rank0]:[W1028 20:25:28.091773638 CUDAEvent.h:57] Warning: CUDA warning: an illegal memory access was encountered (function ~CUDAEvent)
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] misc/strongstream.cc:424 (ncclStrongStreamSynchronize) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] init.cc:2742 (commDestroySync) NCCL WARN commDestroySync: comm 0xfc37600 rank 1 sync hostStream error 1
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] misc/strongstream.cc:424 (ncclStrongStreamSynchronize) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] init.cc:2745 (commDestroySync) NCCL WARN commDestroySync: comm 0xfc37600 rank 1 sync deviceStream error 1
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] allocator.cc:132 (ncclMemFree) NCCL WARN Cuda failure 'an illegal memory access was encountered'
+
+[2026-10-28 20:25:28] nvl72118-T16:1215915:1215975 [1] init.cc:2869 (commReclaim) NCCL WARN commReclaim: cleanup comm 0xfc37600 rank 1 failed in destroy/abort, error 1
+[rank1]:[W1028 20:25:28.096068172 CUDAEvent.h:57] Warning: CUDA warning: an illegal memory access was encountered (function ~CUDAEvent)
+[rank0]:[W1028 20:25:28.208794051 ProcessGroup.cpp:388] Warning: At the time of process termination, there are still 4 unwaited collective calls. Please review your program to ensure that:
+1. c10d_functional.wait_tensor() is invoked on all tensors returned from c10d_functional collective,
+2. c10d_functional.wait_tensor() is invoked on all output tensors of async_op=True torch.distributed collective called under `with allow_inflight_collective_as_graph_input_ctx():`,
+before the output tensors of the collective are used. (function ~WorkRegistry)
+[rank1]:[W1028 20:25:28.214062442 ProcessGroup.cpp:388] Warning: At the time of process termination, there are still 4 unwaited collective calls. Please review your program to ensure that:
+1. c10d_functional.wait_tensor() is invoked on all tensors returned from c10d_functional collective,
+2. c10d_functional.wait_tensor() is invoked on all output tensors of async_op=True torch.distributed collective called under `with allow_inflight_collective_as_graph_input_ctx():`,
+before the output tensors of the collective are used. (function ~WorkRegistry)
+W1028 20:25:28.691000 1215809 torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 1215915 closing signal SIGTERM
+E1028 20:25:28.756000 1215809 torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 0 (pid: 1215914) of binary: /opt/venv/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1020, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1016, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 1007, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-28_20:25:28
+  host      : nvl72118-T16.cm.cluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1215915) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-28_20:25:28
+  host      : nvl72118-T16.cm.cluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1215914) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

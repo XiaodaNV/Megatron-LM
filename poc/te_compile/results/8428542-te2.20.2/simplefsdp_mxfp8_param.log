@@ -1,0 +1,523 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "bf16", "mode": "explain", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.7}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W1028 20:25:36.468026280 ProcessGroupNCCL.cpp:5324] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+NCCL version 2.30.7+cuda13.3
+
+[2026-10-28 20:25:36] nvl72118-T16:1216065:1216065 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216065:1216065 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216065:1216065 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216066:1216066 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216065:1216065 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error 
+[2026-10-28 20:25:36] nvl72118-T16:1216066:1216066 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216066:1216066 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 20:25:36] nvl72118-T16:1216066:1216066 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "bf16", "mode": "aot_eager", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "bf16", "mode": "partial", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "bf16", "mode": "inductor", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8", "mode": "explain", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8", "mode": "aot_eager", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8", "mode": "partial", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8", "mode": "inductor", "ok": null, "skipped": "only mxfp8_param", "wall_s": 0.0}
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2348: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.TensorBase._make_wrapper_subclass.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2348: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.TensorBase._make_wrapper_subclass.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 414, in run_mode
+    ex = torch._dynamo.explain(f)(*inputs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1748, in inner
+    opt_f(*args, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1095, in compile_wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 412, in f
+    return m(*xs)
+           ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 356, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2409, in forward
+    weight_tensor, bias_tensor = self._get_weight_and_bias_tensors()
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2705, in _get_weight_and_bias_tensors
+    unfused_weights = self._get_weight_tensors()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2623, in _get_weight_tensors
+    def _get_weight_tensors(self) -> List[Union[torch.Tensor, QuantizedTensorStorage]]:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2625, in __comprehension__get_weight_tensors_at_2625_23
+    unfused_weights = [getattr(self, name) for name in self.weight_names]
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 348, in weight_prop
+    return _UnshardMXFP8.apply(owner.master, owner.rd, owner.rs, owner.cd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 625, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 303, in forward
+    return MXFP8Tensor(shape=shape, dtype=torch.bfloat16, rowwise_data=rd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/mxfp8_tensor.py", line 266, in __new__
+    return super().__new__(
+           ^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/storage/mxfp8_tensor_storage.py", line 105, in __new__
+    instance = super().__new__(cls, *args, fake_dtype=fake_dtype, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 735, in __new__
+    instance = torch.Tensor._make_wrapper_subclass(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2506, in __call__
+    result = self._torchdynamo_orig_backend(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2217, in __call__
+    result = self._inner_convert(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 772, in __call__
+    result = _compile(
+             ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2066, in _compile
+    raise InternalTorchDynamoError(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2001, in _compile
+    guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_utils_internal.py", line 96, in wrapper_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1611, in compile_inner
+    result = _compile_inner(code, one_graph, hooks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1670, in _compile_inner
+    dynamo_output = compile_frame(
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1516, in compile_frame
+    bytecode, tracer_output = transform_code_object(code, transform)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/bytecode_transformation.py", line 1626, in transform_code_object
+    tracer_output = transformations(instructions, code_options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1488, in transform
+    tracer_output = trace_frame(
+                    ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 367, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 949, in trace_frame
+    run_tracer()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 930, in run_tracer
+    tracer.run()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1809, in run
+    while self.step():
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1476, in step
+    self.dispatch_table[inst.opcode](self, inst)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1013, in wrapper
+    return inner_fn(self, inst)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 2944, in STORE_ATTR
+    VariableTracker.build(self, setattr).call_function(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1590, in call_function
+    return handler(tx, args, kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1106, in <lambda>
+    a.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 108, in realize
+    self._cache.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 45, in realize
+    self.vt = builder.VariableBuilder(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 488, in __call__
+    return self._call_impl(value)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 525, in _call_impl
+    vt = self._wrap(value)
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 813, in _wrap
+    return self.wrap_tensor(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2439, in wrap_tensor
+    self.assert_not_wrapped_by_this_graph(value)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2351, in assert_not_wrapped_by_this_graph
+    if is_fake(value) and maybe_get_fake_mode(value) is self.tx.fake_mode:
+       ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_subclasses/fake_tensor.py", line 210, in is_fake
+    attrs, _ = type(x).__tensor_flatten__(x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 246, in __tensor_flatten__
+    present = [attr for attr, _ in self._INNER_TENSORS if getattr(self, attr) is not None]
+                                                          ^^^^^^^^^^^^^^^^^^^
+torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data'
+
+from user code:
+   File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 745, in torch_dynamo_resume_in___new___at_735
+    instance._requires_grad = requires_grad
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8_param", "mode": "explain", "ok": false, "error": "torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data' from user code: File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py\", line 745, in torch_dynamo_resume_in___new___at_735 instance._requires_grad = requires_grad Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 1.5}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+NotImplementedError: UserDefinedObjectVariable(MXFP8Quantizer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Failed to convert args/kwargs to proxy
+  Higher Order Operator: autograd.Function
+  Explanation: Missing `as_proxy()` implementation for some arg/kwarg.
+
+
+  Developer debug context: call_function args:  TupleVariable(length=2) LazyVariableTracker(realized: ConstantVariable(dtype: torch.bfloat16)) TensorVariable() TensorVariable() TensorVariable() TensorVariable() LazyVariableTracker(realized: UserDefinedObjectVariable(DType)) UserDefinedObjectVariable(MXFP8Quantizer) LazyVariableTracker(unrealized: <class 'bool'>) ConstantVariable(bool: False)
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0055.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 356, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2409, in forward
+    weight_tensor, bias_tensor = self._get_weight_and_bias_tensors()
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2705, in _get_weight_and_bias_tensors
+    unfused_weights = self._get_weight_tensors()
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2625, in _get_weight_tensors
+    unfused_weights = [getattr(self, name) for name in self.weight_names]
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 348, in weight_prop
+    return _UnshardMXFP8.apply(owner.master, owner.rd, owner.rs, owner.cd,
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/autograd_function.py", line 880, in inner
+    outs = orig_fwd(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 303, in forward
+    return MXFP8Tensor(shape=shape, dtype=torch.bfloat16, rowwise_data=rd,
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8_param", "mode": "aot_eager", "ok": false, "error": "torch._dynamo.exc.Unsupported: Failed to convert args/kwargs to proxy Higher Order Operator: autograd.Function Explanation: Missing `as_proxy()` implementation for some arg/kwarg. Developer debug context: call_function args: TupleVariable(length=2) LazyVariableTracker(realized: ConstantVariable(dtype: torch.bfloat16)) TensorVariable() TensorVariable() TensorVariable() TensorVariable() LazyVariableTracker(realized: UserDefinedObjectVariable(DType)) UserDefinedObjectVariable(MXFP8Quantizer) LazyVariableTracker(unrealized: <class 'bool'>) ConstantVariable(bool: False) For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0055.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 356, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2409, in forward weight_tensor, bias_tensor = self._get_weight_and_bias_tensors() File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2705, in _get_weight_and_bias_tensors unfused_weights = self._get_weight_tensors() File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2625, in _get_weight_tensors unfused_weights = [getattr(self, name) for name in self.weight_names] File \"/lustre/fs1/", "te": "2.20.2", "wall_s": 0.2}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2348: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.TensorBase._make_wrapper_subclass.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2348: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.TensorBase._make_wrapper_subclass.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1095, in compile_wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 356, in forward
+    return self.inner(x)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2409, in forward
+    weight_tensor, bias_tensor = self._get_weight_and_bias_tensors()
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2705, in _get_weight_and_bias_tensors
+    unfused_weights = self._get_weight_tensors()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2623, in _get_weight_tensors
+    def _get_weight_tensors(self) -> List[Union[torch.Tensor, QuantizedTensorStorage]]:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2625, in __comprehension__get_weight_tensors_at_2625_56
+    unfused_weights = [getattr(self, name) for name in self.weight_names]
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 348, in weight_prop
+    return _UnshardMXFP8.apply(owner.master, owner.rd, owner.rs, owner.cd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/function.py", line 625, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 303, in forward
+    return MXFP8Tensor(shape=shape, dtype=torch.bfloat16, rowwise_data=rd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/mxfp8_tensor.py", line 266, in __new__
+    return super().__new__(
+           ^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/tensor/storage/mxfp8_tensor_storage.py", line 105, in __new__
+    instance = super().__new__(cls, *args, fake_dtype=fake_dtype, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 735, in __new__
+    instance = torch.Tensor._make_wrapper_subclass(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2506, in __call__
+    result = self._torchdynamo_orig_backend(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2217, in __call__
+    result = self._inner_convert(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 772, in __call__
+    result = _compile(
+             ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2066, in _compile
+    raise InternalTorchDynamoError(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 2001, in _compile
+    guarded_code, tracer_output = compile_inner(code, one_graph, hooks)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_utils_internal.py", line 96, in wrapper_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1611, in compile_inner
+    result = _compile_inner(code, one_graph, hooks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1670, in _compile_inner
+    dynamo_output = compile_frame(
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1516, in compile_frame
+    bytecode, tracer_output = transform_code_object(code, transform)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/bytecode_transformation.py", line 1626, in transform_code_object
+    tracer_output = transformations(instructions, code_options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 1488, in transform
+    tracer_output = trace_frame(
+                    ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 367, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 949, in trace_frame
+    run_tracer()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/convert_frame.py", line 930, in run_tracer
+    tracer.run()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1809, in run
+    while self.step():
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1476, in step
+    self.dispatch_table[inst.opcode](self, inst)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 1013, in wrapper
+    return inner_fn(self, inst)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/symbolic_convert.py", line 2944, in STORE_ATTR
+    VariableTracker.build(self, setattr).call_function(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1590, in call_function
+    return handler(tx, args, kwargs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builtin.py", line 1106, in <lambda>
+    a.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 108, in realize
+    self._cache.realize()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/lazy.py", line 45, in realize
+    self.vt = builder.VariableBuilder(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 488, in __call__
+    return self._call_impl(value)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 525, in _call_impl
+    vt = self._wrap(value)
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 813, in _wrap
+    return self.wrap_tensor(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2439, in wrap_tensor
+    self.assert_not_wrapped_by_this_graph(value)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/builder.py", line 2351, in assert_not_wrapped_by_this_graph
+    if is_fake(value) and maybe_get_fake_mode(value) is self.tx.fake_mode:
+       ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_subclasses/fake_tensor.py", line 210, in is_fake
+    attrs, _ = type(x).__tensor_flatten__(x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 246, in __tensor_flatten__
+    present = [attr for attr, _ in self._INNER_TENSORS if getattr(self, attr) is not None]
+                                                          ^^^^^^^^^^^^^^^^^^^
+torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data'
+
+from user code:
+   File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py", line 745, in torch_dynamo_resume_in___new___at_735
+    instance._requires_grad = requires_grad
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8_param", "mode": "partial", "ok": false, "error": "torch._dynamo.exc.InternalTorchDynamoError: AttributeError: 'MXFP8Tensor' object has no attribute '_rowwise_data' from user code: File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/quantized_tensor.py\", line 745, in torch_dynamo_resume_in___new___at_735 instance._requires_grad = requires_grad Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"", "te": "2.20.2", "wall_s": 0.8}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:2496: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+
+  torch._dynamo.utils.warn_once(msg)
+NotImplementedError: UserDefinedObjectVariable(MXFP8Quantizer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 481, in main
+    rec = run_mode(args.case, prec, mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 434, in run_mode
+    out = fwd_bwd(cm, inputs, prec).detach().float()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 374, in fwd_bwd
+    out = m(*inputs)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 509, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 1106, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Failed to convert args/kwargs to proxy
+  Higher Order Operator: autograd.Function
+  Explanation: Missing `as_proxy()` implementation for some arg/kwarg.
+
+
+  Developer debug context: call_function args:  TupleVariable(length=2) LazyVariableTracker(realized: ConstantVariable(dtype: torch.bfloat16)) TensorVariable() TensorVariable() TensorVariable() TensorVariable() LazyVariableTracker(realized: UserDefinedObjectVariable(DType)) UserDefinedObjectVariable(MXFP8Quantizer) LazyVariableTracker(unrealized: <class 'bool'>) ConstantVariable(bool: False)
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0055.html
+
+from user code:
+   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 356, in forward
+    return self.inner(x)
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2409, in forward
+    weight_tensor, bias_tensor = self._get_weight_and_bias_tensors()
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2705, in _get_weight_and_bias_tensors
+    unfused_weights = self._get_weight_tensors()
+  File "/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py", line 2625, in _get_weight_tensors
+    unfused_weights = [getattr(self, name) for name in self.weight_names]
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 348, in weight_prop
+    return _UnshardMXFP8.apply(owner.master, owner.rd, owner.rs, owner.cd,
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/autograd_function.py", line 880, in inner
+    outs = orig_fwd(*args, **kwargs)
+  File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py", line 303, in forward
+    return MXFP8Tensor(shape=shape, dtype=torch.bfloat16, rowwise_data=rd,
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+RESULT {"case": "simplefsdp_mxfp8_param", "prec": "mxfp8_param", "mode": "inductor", "ok": false, "error": "torch._dynamo.exc.Unsupported: Failed to convert args/kwargs to proxy Higher Order Operator: autograd.Function Explanation: Missing `as_proxy()` implementation for some arg/kwarg. Developer debug context: call_function args: TupleVariable(length=2) LazyVariableTracker(realized: ConstantVariable(dtype: torch.bfloat16)) TensorVariable() TensorVariable() TensorVariable() TensorVariable() LazyVariableTracker(realized: UserDefinedObjectVariable(DType)) UserDefinedObjectVariable(MXFP8Quantizer) LazyVariableTracker(unrealized: <class 'bool'>) ConstantVariable(bool: False) For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0055.html from user code: File \"/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/poc/te_compile/te_compile_probe.py\", line 356, in forward return self.inner(x) File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2409, in forward weight_tensor, bias_tensor = self._get_weight_and_bias_tensors() File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2705, in _get_weight_and_bias_tensors unfused_weights = self._get_weight_tensors() File \"/opt/venv/lib/python3.12/site-packages/transformer_engine/pytorch/module/linear.py\", line 2625, in _get_weight_tensors unfused_weights = [getattr(self, name) for name in self.weight_names] File \"/lustre/fs1/", "te": "2.20.2", "wall_s": 0.1}
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)

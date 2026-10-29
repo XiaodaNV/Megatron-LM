@@ -1,0 +1,42 @@
+Job 8436652 on nvl72061-T15: fab7790cb Share the shape validation and per-tensor alignment computation between the padded and unpadded builders; drop GlobalLayout.get_peer_ranges; replace the uneven_shards bool with a ShardLayout enum (PADDED / UNPADDED)
+overlay ready: /lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2 (torch 2.16.0.dev20261028+cu130 te 2.20.2)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 01:08:00] nvl72061-T15:374430:374430 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM/.claude/worktrees/te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+===== eager =====
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+### get_attention_backend(compiling=False) -> flash=False fused=None fused_backend=1 unfused=1 available=False
+===== make_fx trace =====
+flash-attn v4 may provide important feature support or performance improvement. Please install flash-attn v4 by 
+pip install flash-attn-4==4.0.0b11 nvidia-cutlass-dsl[cu13]
+WARNING:DotProductAttention:flash-attn v4 may provide important feature support or performance improvement. Please install flash-attn v4 by 
+pip install flash-attn-4==4.0.0b11 nvidia-cutlass-dsl[cu13]
+### get_attention_backend(compiling=True) -> flash=False fused=None fused_backend=False unfused=None available=1
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+TE-ish ops in graph: ['mfsdp_te.opaque_bwd.default', 'mfsdp_te.opaque_fwd.default', 'te_softmax.scaled_masked_softmax_bwd.default', 'te_softmax.scaled_masked_softmax_fwd.default']
+AttentionParams fields that differ (eager vs traced):
+  qkv_type: eager=<class 'torch.Tensor'> traced=<class 'torch._subclasses.fake_tensor.FakeTensor'>
+  qkv_layout: eager='sbh3d' traced='sbhd_sbhd_sbhd'
+exit 0

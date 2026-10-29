@@ -1,0 +1,187 @@
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-28 22:09:53] nvl72176-T16:459843:459843 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:53] nvl72176-T16:459843:459843 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:53] nvl72176-T16:459843:459843 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:53] nvl72176-T16:459843:459843 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:54] nvl72176-T16:459843:459843 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:54] nvl72176-T16:459843:459843 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:54] nvl72176-T16:459843:459843 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-28 22:09:54] nvl72176-T16:459843:459843 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "bf16", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 1, "graph_break_count": 0, "op_count": 2, "break_reasons": [], "ok": true, "wall_s": 2.9}
+RESULT {"case": "te_linear", "prec": "bf16", "mode": "aot_eager", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 1}, "bw_ops": {"transformer_engine_compile": 2, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear": 1}, "bw_nonaten": {"transformer_engine_compile::linear": 1, "transformer_engine_compile::linear_backward": 1}, "ok": true, "wall_s": 0.5}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "bf16", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 1}, "bw_ops": {"transformer_engine_compile": 2, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear": 1}, "bw_nonaten": {"transformer_engine_compile::linear": 1, "transformer_engine_compile::linear_backward": 1}, "ok": true, "wall_s": 0.4}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/triton/knobs.py:504: UserWarning: TRITON_DEFAULT_FP_FUSION is unset: defaulting to FP fusion ENABLED for backward compatibility in Triton 3.9. The default will change to DISABLED in Triton 3.10; set TRITON_DEFAULT_FP_FUSION=1 to keep fusion enabled or =0 to adopt the new default early and silence this warning.
+  warn_once(FP_FUSION_DEFAULT_WARNING)
+RESULT {"case": "te_linear", "prec": "bf16", "mode": "inductor", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 5.3, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "ok": true, "wall_s": 5.3}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 1, "graph_break_count": 0, "op_count": 2, "break_reasons": [], "ok": true, "wall_s": 0.6}
+RESULT {"case": "te_linear", "prec": "mxfp8", "mode": "aot_eager", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 7}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear": 1}, "bw_nonaten": {"transformer_engine_compile::linear_backward": 1}, "ok": true, "wall_s": 0.5}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 7}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear": 1}, "bw_nonaten": {"transformer_engine_compile::linear_backward": 1}, "ok": true, "wall_s": 0.4}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8", "mode": "inductor", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.6, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "ok": true, "wall_s": 0.6}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/module/linear.py:2633: UserWarning: You are using quantized weights without quantized compute. Please make sure this is intentional.
+  warnings.warn(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:2971: UserWarning: Dynamo does not know how to trace the builtin `transformer_engine_torch.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1.dequantize.` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8_param", "mode": "explain", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "graph_count": 1, "graph_break_count": 0, "op_count": 2, "break_reasons": [], "ok": true, "wall_s": 1.0}
+RESULT {"case": "te_linear", "prec": "mxfp8_param", "mode": "aot_eager", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear_base": 1}, "bw_nonaten": {"transformer_engine_compile::linear_backward_base": 1}, "ok": true, "wall_s": 0.4}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8_param", "mode": "partial", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.4, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "dynamo_graphs": 1, "fw_graphs": 1, "bw_graphs": 1, "fw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "bw_ops": {"transformer_engine_compile": 1, "python:_operator": 3}, "fw_nonaten": {"transformer_engine_compile::linear_base": 1}, "bw_nonaten": {"transformer_engine_compile::linear_backward_base": 1}, "ok": true, "wall_s": 0.4}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:914'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 914, in nvtx_range_push
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_dynamo/variables/functions.py:3266: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'utils.py:934'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/utils.py", line 934, in nvtx_range_pop
+    if not _nvtx_enabled():
+           ^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+RESULT {"case": "te_linear", "prec": "mxfp8_param", "mode": "inductor", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "compile_s": 0.5, "out_rel_err": 0.0, "grad_rel_err": {"weight": 0.0, "bias": 0.0, "input0": 0.0}, "missing_grads": [], "ok": true, "wall_s": 0.5}
