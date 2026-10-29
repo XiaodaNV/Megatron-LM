@@ -211,6 +211,10 @@ def summarize(gm):
                 name.split("::")[1].split(".")[0], name)
             colls[short] = colls.get(short, 0) + 1
             seq.append(f"{bwd}:{short}({custom.get(PARAM_FQN, custom.get('bucket', '?'))})")
+        elif ns == "mfsdp":  # opaque uneven group collectives (fsdp_group_ops)
+            short = "AGu" if "all_gather" in name else "RSu"
+            colls[short] = colls.get(short, 0) + 1
+            seq.append(f"{bwd}:{short}({custom.get(PARAM_FQN, '?')})")
         elif ns == "mfsdp_te":
             te_ops[name] = te_ops.get(name, 0) + 1
             seq.append(f"{bwd}:TEopaque({custom.get(MODULE_FQN, '?')})")

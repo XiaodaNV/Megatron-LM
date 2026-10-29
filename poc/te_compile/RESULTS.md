@@ -181,7 +181,56 @@ data-dependent (between T*k and T*k + E*31). Fused: TE's `permute_mask_map_fwd` 
 extract specialized integer from data-dependent expression u0". Whole-graph MXFP8 MoE needs a
 static padding budget (pad to the upper bound, with masked rows) or symbolic sizes through TE.
 
-## Environment notes
+## 7. Parameter-group FSDP: MFSDP v2's flat-buffer layout as graph ops
+
+`fsdp_group_ops.py`, `mcore_capture_probe.py --fsdp group`. Replaces the per-parameter `_Unshard`
+of sections 4-6 with v2's unit of communication:
+
+* every parameter of a TransformerLayer goes into one flat buffer **per dtype** (as v2's
+  `FsdpParameterGroup`; MoE routers keep an fp32 group), laid out by v2's own
+  `layout_builder.build_row_atomic_layout` (RowAtomic, `ShardLayout.PADDED` or `UNPADDED`); each
+  rank holds its segment as a 1-D parameter `fsdp_flat_shard_<dtype>`;
+* the layer's forward calls `UnshardGroup` **once** per group (an explicit data dependency, not a
+  hook) and publishes per-parameter views; submodule attributes (`weight`, ...) are properties
+  returning those views. Backward packs the per-parameter grads into the flat layout (zeros for
+  gaps/padding) and reduce-scatters them: one autograd node and one RS per group per layer;
+* collectives: equal segments use the functional collectives (launch and wait are separate,
+  schedulable nodes). Unequal (UNPADDED) segments either `opaque` -- custom ops
+  `mfsdp::all_gather_uneven` / `mfsdp::reduce_scatter_uneven` running v2's list collectives
+  exactly -- or `pad` -- pad each segment to the largest, functional collectives, drop the padding.
+
+Results (4 layers, 4 GB200 ranks, deterministic mode; FX graph run op by op, no CUDA graphs;
+times are eager / graph / graph + dedup+prefetch+blockbucket+sinkrs). Every graph and every pass
+pipeline is **bit-exact** vs eager (loss and all gradients), 0 host syncs.
+
+| model | layout | uneven | AG/RS per step | padding / layer | bf16 (ms) | mxfp8 (ms) | job |
+|---|---|---|---|---|---|---|---|
+| dense | PADDED | -- | 4 / 4 | 69,632 el. | 12.07 / 12.91 / 12.04 | 14.85 / 17.35 / 15.94 | 8444928 |
+| dense | UNPADDED | pad | 4 / 4 | 0 | 13.01 / 14.59 / 13.35 | 15.27 / 18.41 / 17.04 | 8444928 |
+| dense | UNPADDED | opaque | 4u / 4u | 0 | 10.98 / 12.50 / 12.19 | 13.55 / 17.25 / 15.86 | 8444928 |
+| MoE 8e | PADDED | -- | 8 / 8 | 55,296 el. (bf16 group) | 31.84 / 32.89 / 33.52 | -- | 8445358 |
+| MoE 8e | UNPADDED | pad | 8 / 8 | 0 | 33.57 / 39.11 / 32.20 | -- | 8445358 |
+
+(dense layer group: 6 params, 51.4 M elements; MoE layer: bf16 group of 20 params, 86.0 M elements,
+plus a 1-param fp32 router group. UNPADDED rank segments are within 2,048 elements of each other.
+Job 8444930 is the first MoE attempt, which failed on the one-dtype-per-layer assumption; 8445094
+is the rerun whose pass pipeline failed in block bucketing, fixed below.)
+
+Findings:
+* v2's DBuffer semantics map onto the graph unchanged: v2's layout builder, uneven segments and
+  per-dtype groups all trace, and the reduce-scatter of one packed flat gradient per group is
+  bit-exact. Compared with per-parameter sharding (section 6, MoE: 84 AG / 76 RS, eager
+  64.8 ms) the group unit cuts collectives 10x and eager time in half.
+* `opaque` uneven collectives are correct but complete inside their node, so passes can only
+  change when they are issued: prefetch moved them, nothing overlapped (no RS wait to sink).
+  To be schedulable, an uneven collective needs a launch/wait split like the functional
+  collectives (or the `pad` emulation).
+* `pad` keeps UNPADDED layouts schedulable at the cost of (max - own) extra elements per rank
+  (<= 2,048 here) plus pad/compaction copies.
+* The block-bucketing pass had to key buckets by dtype (the inductor merge helpers require one
+  dtype per bucket); with one group per (layer, dtype) there is nothing left for it to merge.
+* Timings are FX-interpreted and mostly noise-level at this size; they say nothing about v2 yet.
+
 ## Environment notes
 * slurm-broker jobs need explicit Lustre mounts (`mounts=[/lustre/fs1/...:..., /lustre/fsw/...:...]`).
 * Nightly overlay: `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2`,

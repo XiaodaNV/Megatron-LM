@@ -1,0 +1,187 @@
+Job 8444930 on nvl72175-T01: 2d76975ee Prototype compile-based FSDP: whole-graph capture of MCore layers with TE
+overlay ready: /lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2 (torch 2.16.0.dev20261028+cu130 te 2.20.2)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137877:2137877 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137878:2137878 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137876:2137876 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 07:47:29] nvl72175-T01:2137875:2137875 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 368, in <module>
+[rank2]:     main()
+[rank2]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 293, in main
+[rank2]:     specs = apply_group_fsdp(
+[rank2]:             ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py", line 187, in apply_group_fsdp
+[rank2]:     assert len(dtypes) == 1, f"{unit_fqn}: one dtype per unit in this PoC, got {dtypes}"
+[rank2]:            ^^^^^^^^^^^^^^^^
+[rank2]: AssertionError: layers.0: one dtype per unit in this PoC, got {torch.bfloat16, torch.float32}
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 368, in <module>
+[rank3]:     main()
+[rank3]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 293, in main
+[rank3]:     specs = apply_group_fsdp(
+[rank3]:             ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py", line 187, in apply_group_fsdp
+[rank3]:     assert len(dtypes) == 1, f"{unit_fqn}: one dtype per unit in this PoC, got {dtypes}"
+[rank3]:            ^^^^^^^^^^^^^^^^
+[rank3]: AssertionError: layers.0: one dtype per unit in this PoC, got {torch.bfloat16, torch.float32}
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 368, in <module>
+[rank1]:     main()
+[rank1]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 293, in main
+[rank1]:     specs = apply_group_fsdp(
+[rank1]:             ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py", line 187, in apply_group_fsdp
+[rank1]:     assert len(dtypes) == 1, f"{unit_fqn}: one dtype per unit in this PoC, got {dtypes}"
+[rank1]:            ^^^^^^^^^^^^^^^^
+[rank1]: AssertionError: layers.0: one dtype per unit in this PoC, got {torch.bfloat16, torch.float32}
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 368, in <module>
+[rank0]:     main()
+[rank0]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py", line 293, in main
+[rank0]:     specs = apply_group_fsdp(
+[rank0]:             ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py", line 187, in apply_group_fsdp
+[rank0]:     assert len(dtypes) == 1, f"{unit_fqn}: one dtype per unit in this PoC, got {dtypes}"
+[rank0]:            ^^^^^^^^^^^^^^^^
+[rank0]: AssertionError: layers.0: one dtype per unit in this PoC, got {torch.bfloat16, torch.float32}
+W1029 07:48:01.372000 2137705 torch/distributed/elastic/multiprocessing/api.py:1033] Sending process 2137875 closing signal SIGTERM
+W1029 07:48:01.373000 2137705 torch/distributed/elastic/multiprocessing/api.py:1033] Sending process 2137877 closing signal SIGTERM
+W1029 07:48:01.373000 2137705 torch/distributed/elastic/multiprocessing/api.py:1033] Sending process 2137878 closing signal SIGTERM
+E1029 07:48:02.939000 2137705 torch/distributed/elastic/multiprocessing/api.py:1007] failed (exitcode: 1) local_rank: 1 (pid: 2137876) of binary: /opt/venv/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/run.py", line 1143, in <module>
+    main()
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 384, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/run.py", line 1139, in main
+    run(args)
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/run.py", line 1130, in run
+    elastic_launch(
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/launcher/api.py", line 212, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/distributed/launcher/api.py", line 402, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/mcore_capture_probe.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-29_07:48:02
+  host      : nvl72175-T01.cm.cluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2137875) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-10-29_07:48:02
+  host      : nvl72175-T01.cm.cluster
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 2137877) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-10-29_07:48:02
+  host      : nvl72175-T01.cm.cluster
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 2137878) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_07:48:01
+  host      : nvl72175-T01.cm.cluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2137876) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+exit 1

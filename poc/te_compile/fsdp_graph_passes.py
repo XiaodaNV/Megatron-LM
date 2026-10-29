@@ -30,8 +30,15 @@ def _is(n, op):
     return n.op == "call_function" and n.target in (op.default,)
 
 
-def is_ag(n):
+def is_funcol_ag(n):
     return _is(n, _c10d.all_gather_into_tensor)
+
+
+def is_ag(n):
+    """Functional all-gather, or the opaque uneven group all-gather (fsdp_group_ops), which
+    completes inside its node: moving it changes when it is issued, not whether it overlaps."""
+    return _is(n, _c10d.all_gather_into_tensor) or (
+        n.op == "call_function" and str(n.target).startswith("mfsdp.all_gather_uneven"))
 
 
 def is_rs(n):
@@ -78,7 +85,7 @@ def dedup_unshard(gm):
     """CSE identical all-gathers (same input, same group) within the same direction."""
     seen, removed = {}, 0
     for n in list(gm.graph.nodes):
-        if not is_ag(n):
+        if not is_funcol_ag(n):
             continue
         key = (n.args, tuple(sorted(n.kwargs.items())), is_bwd(n))
         first = seen.get(key)
@@ -95,16 +102,21 @@ def dedup_unshard(gm):
     return removed
 
 
+def _input_dtype(n):
+    return n.args[0].meta["val"].dtype
+
+
 def bucket_by_block(gm, mode=None):
-    """Merge each block's forward all-gathers, and its backward reduce-scatters."""
+    """Merge each block's forward all-gathers, and its backward reduce-scatters, per dtype
+    (the inductor merge helpers require one dtype per bucket; e.g. MoE routers are fp32)."""
     from torch._inductor.fx_passes.bucketing import merge_all_gather, merge_reduce_scatter
 
     ag, rs = collections.defaultdict(list), collections.defaultdict(list)
     for n in gm.graph.nodes:
-        if is_ag(n) and block_of(n):
-            ag[(block_of(n), is_bwd(n))].append(n)
+        if is_funcol_ag(n) and block_of(n):
+            ag[(block_of(n), is_bwd(n), _input_dtype(n))].append(n)
         elif is_rs(n) and block_of(n):
-            rs[block_of(n)].append(n)
+            rs[(block_of(n), _input_dtype(n))].append(n)
     ag_buckets = [b for b in ag.values() if len(b) > 1]
     rs_buckets = [b for b in rs.values() if len(b) > 1]
     if ag_buckets:

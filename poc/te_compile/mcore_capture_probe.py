@@ -247,6 +247,10 @@ def main():
     ap.add_argument("--moe-topk", type=int, default=2)
     ap.add_argument("--moe-ffn", type=int, default=1408)
     ap.add_argument("--moe-permute-fusion", action="store_true")
+    ap.add_argument("--fsdp", default="param", choices=["param", "group"],
+                    help="param: per-parameter Shard(0) unshard; group: v2 flat buffer per layer")
+    ap.add_argument("--shard-layout", default="padded", choices=["padded", "unpadded"])
+    ap.add_argument("--uneven-impl", default="pad", choices=["pad", "opaque"])
     ap.add_argument("--deterministic", action="store_true",
                     help="TransformerConfig.deterministic_mode (deterministic cuDNN attention bwd)")
     ap.add_argument("--passes", default="none,dedup+prefetch+blockbucket+sinkrs")
@@ -267,8 +271,11 @@ def main():
 
     def emit(rec):
         rec.update(te=transformer_engine.__version__, torch=torch.__version__,
-                   world=dist.get_world_size(), layers=args.layers, model="mcore_te_layer" + (f"_moe{args.moe_experts}" if args.moe_experts else ""),
-                   deterministic=args.deterministic, permute_fusion=args.moe_permute_fusion)
+                   world=dist.get_world_size(), layers=args.layers,
+                   model="mcore_te_layer" + (f"_moe{args.moe_experts}" if args.moe_experts else ""),
+                   deterministic=args.deterministic, permute_fusion=args.moe_permute_fusion,
+                   fsdp=args.fsdp, shard_layout=args.shard_layout,
+                   uneven_impl=args.uneven_impl if args.fsdp == "group" else None)
         if rank0():
             print("RESULT " + json.dumps(rec), flush=True)
             with open(args.out, "a") as fh:
@@ -276,13 +283,28 @@ def main():
 
     for prec in args.precs.split(","):
         model = build(args, prec)
-        sharded = apply_simple_fsdp(model)
+        layout_info = None
+        if args.fsdp == "group":
+            from fsdp_group_ops import apply_group_fsdp, describe
+            from megatron.core.distributed.fsdp.src.megatron_fsdp.experimental.placement import (
+                ShardLayout,
+            )
+
+            specs = apply_group_fsdp(
+                {f"layers.{i}": layer for i, layer in enumerate(model.layers)},
+                shard_layout=ShardLayout[args.shard_layout.upper()],
+                uneven_impl=args.uneven_impl)
+            sharded = [f for _, s in specs for f in s.names]
+            layout_info = [d for d in describe(specs) if d["unit"] == "layers.0"]  # same per layer
+        else:
+            sharded = apply_simple_fsdp(model)
         params = {n: p for n, p in model.named_parameters()}
         torch.manual_seed(1 + dist.get_rank())
         x = {"x": torch.randn(args.seq, args.batch, args.hidden, device="cuda", dtype=torch.bfloat16),
              "aux_scale": torch.ones((), device="cuda")}
         step, names = make_step(model, prec)
-        rec = dict(prec=prec, stage="eager", sharded=len(sharded), params=len(names))
+        rec = dict(prec=prec, stage="eager", sharded=len(sharded), params=len(names),
+                   layout=layout_info)
         try:
             ref = [t.detach().clone() for t in step(params, x)]
             # run-to-run noise of eager itself (cuDNN attention backward uses atomics)
