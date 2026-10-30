@@ -36,6 +36,7 @@ from joint_capture_probe import (
     apply_pass,
     bench,
     compare,
+    overlap_stats,
     rank0,
     summarize,
     trace,
@@ -250,7 +251,9 @@ def main():
     ap.add_argument("--fsdp", default="param", choices=["param", "group"],
                     help="param: per-parameter Shard(0) unshard; group: v2 flat buffer per layer")
     ap.add_argument("--shard-layout", default="padded", choices=["padded", "unpadded"])
-    ap.add_argument("--uneven-impl", default="pad", choices=["pad", "opaque"])
+    ap.add_argument("--uneven-impl", default="pad", choices=["pad", "opaque", "async"])
+    ap.add_argument("--overlap", action="store_true",
+                    help="profile NCCL vs compute kernel overlap on the GPU timeline")
     ap.add_argument("--deterministic", action="store_true",
                     help="TransformerConfig.deterministic_mode (deterministic cuDNN attention bwd)")
     ap.add_argument("--passes", default="none,dedup+prefetch+blockbucket+sinkrs")
@@ -313,6 +316,8 @@ def main():
             eager_ms = bench(lambda: step(params, x))
             eager_peak = round(torch.cuda.max_memory_allocated() / 1e9, 2)
             rec.update(ok=True, eager_ms=eager_ms, eager_peak_gb=eager_peak)
+            if args.overlap:
+                rec["eager_overlap"] = overlap_stats(lambda: step(params, x))
         except Exception as e:  # pylint: disable=broad-except
             rec.update(ok=False, error=" ".join(str(e).split())[:1500])
             if rank0():
@@ -350,6 +355,12 @@ def main():
                 torch.cuda.reset_peak_memory_stats()
                 rec["graph_ms"] = bench(lambda: run(g))
                 rec["graph_peak_gb"] = round(torch.cuda.max_memory_allocated() / 1e9, 2)
+                if args.overlap:
+                    tp = None
+                    if args.dump and rank0():
+                        os.makedirs(args.dump, exist_ok=True)
+                        tp = os.path.join(args.dump, f"trace-{prec}-{pname.replace('+', '_')}.json")
+                    rec["graph_overlap"] = overlap_stats(lambda: run(g), trace_path=tp)
                 rec["ok"] = True
                 if args.dump and rank0():
                     os.makedirs(args.dump, exist_ok=True)

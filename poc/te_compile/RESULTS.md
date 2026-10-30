@@ -231,6 +231,43 @@ Findings:
   dtype per bucket); with one group per (layer, dtype) there is nothing left for it to merge.
 * Timings are FX-interpreted and mostly noise-level at this size; they say nothing about v2 yet.
 
+## 8. Schedulable uneven collectives (launch / wait split)
+
+`--uneven-impl async` (`fsdp_group_ops.py`): `mfsdp::all_gather_uneven_start` /
+`mfsdp::reduce_scatter_uneven_start` run v2's list collectives with `async_op=True` and register the
+Work on their output with `torch._C._distributed_c10d._register_work` (the pattern PyTorch's own
+symmetric-memory ops use); the graph then waits with the standard
+`_c10d_functional.wait_tensor`. Launch and wait are separate nodes, so the existing prefetch and
+RS-wait-sinking passes apply unchanged (they now also recognise `mfsdp.*` launches).
+
+Correctness: every async graph and pass pipeline is bit-exact vs eager (dense bf16 + mxfp8, MoE
+bf16; jobs 8445970, 8445975, 8446374, 8446379).
+
+Overlap (`--overlap`: NCCL vs compute kernels on the rank-0 GPU timeline, per step, graph +
+dedup+prefetch+blockbucket+sinkrs), dense bf16, UNPADDED, job 8445970:
+
+| uneven impl | NCCL time | overlapped with compute | exposed |
+|---|---|---|---|
+| opaque | 12.44 ms | 0.00 ms | 12.44 ms |
+| pad | 8.89 ms | 3.62 ms | 5.27 ms |
+| async | 7.10 ms | 2.65 ms | 4.45 ms |
+
+Without the passes all three expose 100% of their communication; `opaque` stays at 0 overlap with
+them, `async` and `pad` overlap once prefetch / RS-wait sinking move the waits.
+
+**Caveat -- these runs are host-bound, so overlap is not yet quantifiable.** Kernel-only analysis
+of the saved traces (`trace_overlap.py`, jobs 8446374 / 8446379; traces under `results/*/graphs/`,
+not committed) shows GPU busy time of 6-21 ms against a per-step span of 24-63 ms: the GPU idles
+while Python dispatches the FX graph node by node (plus TE custom-op glue and profiler overhead).
+NCCL kernel durations then mostly measure peers' host skew (the same mxfp8 `pad` graph shows
+1.3 ms without and 15.0 ms with the passes), so MXFP8 and MoE overlap numbers vary run to run and
+the dense bf16 table above is only qualitative. Quantifying overlap needs the graph replayed
+without host overhead (CUDA graphs / inductor), the next step.
+
+(The in-probe statistics of 8446374 / 8446379 are wrong: with CPU profiling enabled, Kineto
+mirrors user annotations onto the GPU timeline and `prof.events()` counted them as kernels.
+`overlap_stats` now parses the chrome trace and counts only `cat == "kernel"` events.)
+
 ## Environment notes
 * slurm-broker jobs need explicit Lustre mounts (`mounts=[/lustre/fs1/...:..., /lustre/fsw/...:...]`).
 * Nightly overlay: `/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2`,

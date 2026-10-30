@@ -1,0 +1,154 @@
+Job 8446374 on nvl72173-T18: 0dbcff301 Prototype compile-based FSDP: v2 flat-buffer parameter groups as graph ops
+overlay ready: /lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2 (torch 2.16.0.dev20261028+cu130 te 2.20.2)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/cuda/__init__.py:70: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+NCCL version 2.32.3+cuda13.4
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error 
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error 
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] ibvwrap.cc:127 NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071118:2071118 [1] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071117:2071117 [0] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071120:2071120 [3] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+
+[2026-10-29 08:43:14] nvl72173-T18:2071119:2071119 [2] misc/ibvwrap.cc:406 (wrap_ibv_query_port_speed) NCCL WARN Call to ibv_query_port_speed failed with error Protocol not supported errno 93
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/megatron/core/transformer/transformer_config.py:3687: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:148: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  g = _wait(funcol.all_gather_tensor(padded, 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:148: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  g = _wait(funcol.all_gather_tensor(padded, 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:148: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  g = _wait(funcol.all_gather_tensor(padded, 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:148: FutureWarning: `torch.distributed._functional_collectives.all_gather_tensor` is deprecated. Please use `torch.distributed.functional_collectives.all_gather_single` instead.
+  g = _wait(funcol.all_gather_tensor(padded, 0, _WORLD()))
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/transformer_engine/pytorch/attention/dot_product_attention/dot_product_attention.py:2624: DeprecationWarning: Relying on pointer-based detection of packed q/k/v layouts (detected 'sbh3d') is deprecated: pass the packed buffer explicitly via qkv_layer/kv_layer (with qkv_interleave_dim) to DotProductAttention instead.
+  ) = dpa_utils.get_qkv_layout(
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:166: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = _wait(funcol.reduce_scatter_tensor(torch.cat(parts), "sum", 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:166: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = _wait(funcol.reduce_scatter_tensor(torch.cat(parts), "sum", 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:166: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = _wait(funcol.reduce_scatter_tensor(torch.cat(parts), "sum", 0, _WORLD()))
+/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_mcore/users/xiaodaz/code/my_code/Megatron-LM-te-compile-poc/poc/te_compile/fsdp_group_ops.py:166: FutureWarning: `torch.distributed._functional_collectives.reduce_scatter_tensor` is deprecated. Please use `torch.distributed.functional_collectives.reduce_scatter_single` instead.
+  rs = _wait(funcol.reduce_scatter_tensor(torch.cat(parts), "sum", 0, _WORLD()))
+USDT:2026-10-29 08:43:41 2071119:2071119 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:41 2071117:2071117 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:41 2071120:2071120 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:41 2071118:2071118 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:41 2071120:2071120 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:41 2071119:2071119 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:41 2071117:2071117 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:41 2071118:2071118 SyncActivityProfilerHandler.cpp:46] profiler_stop
+RESULT {"prec": "mxfp8", "stage": "eager", "sharded": 24, "params": 4, "layout": [{"unit": "layers.0", "params": 6, "logical": 51384320, "size": 51384320, "padding": 0, "rank_sizes": [12845056, 12847104, 12845056, 12847104], "equal": false}], "eager_rerun_loss_rel": 0.0, "eager_rerun_max_grad_rel": 0.0, "ok": true, "eager_ms": 15.244, "eager_peak_gb": 2.57, "eager_overlap": {"comm_ms": 6.7, "overlapped_ms": 6.7, "exposed_ms": 0.0, "compute_ms": 12.28, "busy_ms": 12.28, "span_ms": 24.366}, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer", "deterministic": true, "permute_fusion": false, "fsdp": "group", "shard_layout": "unpadded", "uneven_impl": "pad"}
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+/lustre/fsw/portfolios/coreai/users/xiaodaz/envs/torch216-nightly-te2.20.2/torch/_ops.py:929: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/EmptyTensor.cpp:54.)
+  return self._op(*args, **kwargs)
+RESULT {"prec": "mxfp8", "stage": "trace", "ok": true, "trace_s": 0.4, "nodes": 627, "ns_hist": {"aten": 361, "_c10d_functional": 24, "mfsdp_te": 24, "python": 195, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:AG(layers.0.__fsdp_group_bfloat16__) F:TEopaque(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:AG(layers.1.__fsdp_group_bfloat16__) F:TEopaque(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:AG(layers.2.__fsdp_group_bfloat16__) F:TEopaque(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:AG(layers.3.__fsdp_group_bfloat16__) F:TEopaque(layers.3) F:TEopaque(layers.3) F:TE(layers.3) F:TEopaque(layers.3) F:TE(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TEopaque(layers.3) B:RS(layers.3.__fsdp_group_bfloat16__) B:TE(layers.2) B:TEopaque(layers.2) B:TE(layers.2) B:TEopaque(layers.2) B:TEopaque(layers.2) B:RS(layers.2.__fsdp_group_bfloat16__) B:TE(layers.1) B:TEopaque(layers.1) B:TE(layers.1) B:TEopaque(layers.1) B:TEopaque(layers.1) B:RS(layers.1.__fsdp_group_bfloat16__) B:TE(layers.0) B:TEopaque(layers.0) B:TE(layers.0) B:TEopaque(layers.0) B:TEopaque(layers.0) B:RS(layers.0.__fsdp_group_bfloat16__)", "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer", "deterministic": true, "permute_fusion": false, "fsdp": "group", "shard_layout": "unpadded", "uneven_impl": "pad"}
+USDT:2026-10-29 08:43:42 2071118:2071118 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:42 2071120:2071120 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:42 2071119:2071119 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:42 2071117:2071117 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:42 2071118:2071118 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:42 2071119:2071119 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:42 2071120:2071120 SyncActivityProfilerHandler.cpp:46] profiler_stopUSDT:2026-10-29 08:43:42 2071117:2071117 SyncActivityProfilerHandler.cpp:46] profiler_stop
+
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "none", "eager_ms": 15.244, "eager_peak_gb": 2.57, "pass_stats": {}, "nodes": 627, "ns_hist": {"aten": 361, "_c10d_functional": 24, "mfsdp_te": 24, "python": 195, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:AG(layers.0.__fsdp_group_bfloat16__) F:TEopaque(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:AG(layers.1.__fsdp_group_bfloat16__) F:TEopaque(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:AG(layers.2.__fsdp_group_bfloat16__) F:TEopaque(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:AG(layers.3.__fsdp_group_bfloat16__) F:TEopaque(layers.3) F:TEopaque(layers.3) F:TE(layers.3) F:TEopaque(layers.3) F:TE(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TEopaque(layers.3) B:RS(layers.3.__fsdp_group_bfloat16__) B:TE(layers.2) B:TEopaque(layers.2) B:TE(layers.2) B:TEopaque(layers.2) B:TEopaque(layers.2) B:RS(layers.2.__fsdp_group_bfloat16__) B:TE(layers.1) B:TEopaque(layers.1) B:TE(layers.1) B:TEopaque(layers.1) B:TEopaque(layers.1) B:RS(layers.1.__fsdp_group_bfloat16__) B:TE(layers.0) B:TEopaque(layers.0) B:TE(layers.0) B:TEopaque(layers.0) B:TEopaque(layers.0) B:RS(layers.0.__fsdp_group_bfloat16__)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 20.982, "graph_peak_gb": 2.49, "graph_overlap": {"comm_ms": 1.342, "overlapped_ms": 1.342, "exposed_ms": 0.0, "compute_ms": 6.756, "busy_ms": 6.756, "span_ms": 27.028}, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer", "deterministic": true, "permute_fusion": false, "fsdp": "group", "shard_layout": "unpadded", "uneven_impl": "pad"}
+USDT:2026-10-29 08:43:43 2071119:2071119 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:43 2071117:2071117 SyncActivityProfilerHandler.cpp:39] profiler_startUSDT:2026-10-29 08:43:43 2071118:2071118 SyncActivityProfilerHandler.cpp:39] profiler_start
+
+USDT:2026-10-29 08:43:43 2071120:2071120 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-10-29 08:43:43 2071117:2071117 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:43 2071118:2071118 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:43 2071119:2071119 SyncActivityProfilerHandler.cpp:46] profiler_stop
+USDT:2026-10-29 08:43:43 2071120:2071120 SyncActivityProfilerHandler.cpp:46] profiler_stop
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "dedup+prefetch+blockbucket+sinkrs", "eager_ms": 15.244, "eager_peak_gb": 2.57, "pass_stats": {"dedup_removed": 0, "prefetch_moved": 9, "ag_buckets": 0, "rs_buckets": 0, "rs_wait_moved": 12}, "nodes": 511, "ns_hist": {"aten": 281, "_c10d_functional": 24, "mfsdp_te": 24, "python": 159, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:AG(layers.0.__fsdp_group_bfloat16__) F:AG(layers.1.__fsdp_group_bfloat16__) F:TEopaque(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:AG(layers.2.__fsdp_group_bfloat16__) F:TEopaque(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:TEopaque(layers.1) F:TE(layers.1) F:AG(layers.3.__fsdp_group_bfloat16__) F:TEopaque(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:TEopaque(layers.2) F:TE(layers.2) F:TEopaque(layers.3) F:TEopaque(layers.3) F:TE(layers.3) F:TEopaque(layers.3) F:TE(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TE(layers.3) B:TEopaque(layers.3) B:TEopaque(layers.3) B:RS(layers.3.__fsdp_group_bfloat16__) B:TE(layers.2) B:TEopaque(layers.2) B:TE(layers.2) B:TEopaque(layers.2) B:TEopaque(layers.2) B:RS(layers.2.__fsdp_group_bfloat16__) B:TE(layers.1) B:TEopaque(layers.1) B:TE(layers.1) B:TEopaque(layers.1) B:TEopaque(layers.1) B:RS(layers.1.__fsdp_group_bfloat16__) B:TE(layers.0) B:TEopaque(layers.0) B:TE(layers.0) B:TEopaque(layers.0) B:TEopaque(layers.0) B:RS(layers.0.__fsdp_group_bfloat16__)", "loss_rel": 0.0, "max_grad_rel": 0.0, "graph_ms": 19.684, "graph_peak_gb": 2.49, "graph_overlap": {"comm_ms": 15.016, "overlapped_ms": 15.016, "exposed_ms": 0.0, "compute_ms": 17.563, "busy_ms": 17.563, "span_ms": 25.677}, "ok": true, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer", "deterministic": true, "permute_fusion": false, "fsdp": "group", "shard_layout": "unpadded", "uneven_impl": "pad"}
+exit 0
+RESULT {"prec": "mxfp8", "stage": "eager", "sharded": 24, "params": 4, "layout": [{"unit": "layers.0", "params": 6, "logical": 51384320, "size": 51384320, "padding": 0, "rank_sizes": [12845056, 12847104, 12845056, 12847104], "equal": false}], "eager_rerun_loss_rel": 0.0, "eager_rerun_max_grad_rel": 0.0, "ok": true, "eager_ms": 15.244, "eager_peak_gb": 2.57, "eager_overlap": {"comm_ms": 6.7, "overlapped_ms": 6.7, "exposed_ms": 0.0, "compute_ms": 12.28, "busy_ms": 12.28, "span_ms": 24.366}, "te": "2.20.2", "torch": "2.16.0.dev20261028+cu130", "world": 4, "layers": 4, "model": "mcore_te_layer", "
+RESULT {"prec": "mxfp8", "stage": "trace", "ok": true, "trace_s": 0.4, "nodes": 627, "ns_hist": {"aten": 361, "_c10d_functional": 24, "mfsdp_te": 24, "python": 195, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:AG(layers.0.__fsdp_group_bfloat16__) F:TEopaque(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:AG(layers.1.__fsdp_group_bfloat16__) F:TEopaq
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "none", "eager_ms": 15.244, "eager_peak_gb": 2.57, "pass_stats": {}, "nodes": 627, "ns_hist": {"aten": 361, "_c10d_functional": 24, "mfsdp_te": 24, "python": 195, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:AG(layers.0.__fsdp_group_bfloat16__) F:TEopaque(layers.0) F:TEopaque(layers.0) F:TE(layers.0) F:TEopaque(layers.0) F:TE(laye
+RESULT {"prec": "mxfp8", "stage": "pass", "pass_name": "dedup+prefetch+blockbucket+sinkrs", "eager_ms": 15.244, "eager_peak_gb": 2.57, "pass_stats": {"dedup_removed": 0, "prefetch_moved": 9, "ag_buckets": 0, "rs_buckets": 0, "rs_wait_moved": 12}, "nodes": 511, "ns_hist": {"aten": 281, "_c10d_functional": 24, "mfsdp_te": 24, "python": 159, "transformer_engine_compile": 16}, "te_ops": {"mfsdp_te::opaque_fwd": 12, "transformer_engine_compile::linear": 8, "transformer_engine_compile::linear_backward": 8, "mfsdp_te::opaque_bwd": 12}, "collectives": {"AG": 4, "RS": 4}, "host_syncs": 0, "order": "F:A

@@ -17,6 +17,10 @@ Collectives (1-D data-parallel mesh, the WORLD group):
     `mfsdp::reduce_scatter_uneven` running exactly v2's list collectives (grouped NCCL
     broadcasts / reduces). One node each: the collective completes inside the op, so graph
     passes cannot overlap it with compute.
+  - "async": the same list collectives launched with async_op=True by
+    `mfsdp::all_gather_uneven_start` / `mfsdp::reduce_scatter_uneven_start`, which register the
+    Work on their output; the graph waits with PyTorch's `_c10d_functional.wait_tensor`, so
+    launch and wait are separate nodes like the functional collectives.
   - "pad": pad every segment to the largest one and use the functional collectives above, then
     drop the padding. Sends (max - own) extra elements per rank; schedulable like the equal case.
 
@@ -87,6 +91,46 @@ def _(full, rank_sizes, rank, group_name):
     return full.new_empty(rank_sizes[rank])
 
 
+# ----------------------------------------------------------------------------- uneven, async
+# Same list collectives as above, launched with async_op=True. The Work is registered on the
+# output tensor, so PyTorch's functional `_c10d_functional.wait_tensor` waits for it (the pattern
+# torch's own symmetric-memory ops use): launch and wait become separate graph nodes that passes
+# can move apart, like the functional collectives of the equal case.
+def _register(out, work):
+    torch._C._distributed_c10d._register_work(out, work)
+    return out
+
+
+@torch.library.custom_op("mfsdp::all_gather_uneven_start", mutates_args=())
+def all_gather_uneven_start(
+    shard: torch.Tensor, rank_sizes: List[int], group_name: str
+) -> torch.Tensor:
+    out = shard.new_empty(sum(rank_sizes))
+    work = dist.all_gather(list(out.split(rank_sizes)), shard.contiguous(),
+                           group=_resolve(group_name), async_op=True)
+    return _register(out, work)
+
+
+@all_gather_uneven_start.register_fake
+def _(shard, rank_sizes, group_name):
+    return shard.new_empty(sum(rank_sizes))
+
+
+@torch.library.custom_op("mfsdp::reduce_scatter_uneven_start", mutates_args=())
+def reduce_scatter_uneven_start(
+    full: torch.Tensor, rank_sizes: List[int], rank: int, group_name: str
+) -> torch.Tensor:
+    out = full.new_empty(rank_sizes[rank])
+    work = dist.reduce_scatter(out, list(full.contiguous().split(rank_sizes)),
+                               op=dist.ReduceOp.SUM, group=_resolve(group_name), async_op=True)
+    return _register(out, work)
+
+
+@reduce_scatter_uneven_start.register_fake
+def _(full, rank_sizes, rank, group_name):
+    return full.new_empty(rank_sizes[rank])
+
+
 # ----------------------------------------------------------------------------- dispatch
 def gather_flat(shard, rank_sizes, rank, uneven_impl):
     """Local segment -> full flat buffer (layout.size elements)."""
@@ -95,6 +139,8 @@ def gather_flat(shard, rank_sizes, rank, uneven_impl):
         return _wait(funcol.all_gather_tensor(shard, 0, _WORLD()))
     if uneven_impl == "opaque":
         return all_gather_uneven(shard, list(rank_sizes), _group_name())
+    if uneven_impl == "async":
+        return _wait(all_gather_uneven_start(shard, list(rank_sizes), _group_name()))
     if uneven_impl == "pad":
         m = max(rank_sizes)
         padded = torch.cat([shard, shard.new_zeros(m - rank_sizes[rank])]) \
@@ -110,6 +156,8 @@ def reduce_scatter_flat(full, rank_sizes, rank, uneven_impl):
         return _wait(funcol.reduce_scatter_tensor(full, "sum", 0, _WORLD()))
     if uneven_impl == "opaque":
         return reduce_scatter_uneven(full, list(rank_sizes), rank, _group_name())
+    if uneven_impl == "async":
+        return _wait(reduce_scatter_uneven_start(full, list(rank_sizes), rank, _group_name()))
     if uneven_impl == "pad":
         m = max(rank_sizes)
         parts = []

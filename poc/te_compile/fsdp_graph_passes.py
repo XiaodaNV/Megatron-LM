@@ -35,8 +35,10 @@ def is_funcol_ag(n):
 
 
 def is_ag(n):
-    """Functional all-gather, or the opaque uneven group all-gather (fsdp_group_ops), which
-    completes inside its node: moving it changes when it is issued, not whether it overlaps."""
+    """Functional all-gather, or an uneven group all-gather from fsdp_group_ops: the
+    asynchronous `mfsdp.all_gather_uneven_start` (waited by a functional wait_tensor), or the
+    opaque `mfsdp.all_gather_uneven`, which completes inside its node -- moving that one changes
+    when it is issued, not whether it overlaps."""
     return _is(n, _c10d.all_gather_into_tensor) or (
         n.op == "call_function" and str(n.target).startswith("mfsdp.all_gather_uneven"))
 
@@ -134,7 +136,9 @@ def _collectives(gm, pred):
         if n.op != "call_function" or not pred(n):
             continue
         name = str(n.target)
-        if "_c10d_functional" in name and ("all_gather" in name or "reduce_scatter" in name):
+        # functional collectives, and fsdp_group_ops' uneven ones (mfsdp.*)
+        if ("_c10d_functional" in name or name.startswith("mfsdp.")) and (
+                "all_gather" in name or "reduce_scatter" in name):
             out.append(n)
     return out
 

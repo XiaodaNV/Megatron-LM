@@ -252,6 +252,76 @@ def bench(fn, iters=10, warmup=3):
     return round(t0.elapsed_time(t1) / iters, 3)
 
 
+def _union(intervals):
+    merged = []
+    for s, e in sorted(intervals):
+        if merged and s <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], e)
+        else:
+            merged.append([s, e])
+    return merged
+
+
+def _length(intervals):
+    return sum(e - s for s, e in intervals)
+
+
+def _intersect(a, b):
+    out, i, j = [], 0, 0
+    while i < len(a) and j < len(b):
+        s, e = max(a[i][0], b[j][0]), min(a[i][1], b[j][1])
+        if s < e:
+            out.append([s, e])
+        if a[i][1] < b[j][1]:
+            i += 1
+        else:
+            j += 1
+    return out
+
+
+def overlap_stats(fn, iters=3, warmup=2, trace_path=None):
+    """GPU-timeline communication/compute overlap per step (ms), independent of host overhead:
+    comm = union of NCCL kernel intervals, overlapped = comm intersected with compute kernels,
+    exposed = comm - overlapped; busy = union of all kernels, span = first kernel start to last
+    kernel end (busy << span means the GPU waits for the host). trace_path: chrome trace."""
+    from torch.profiler import ProfilerActivity, profile
+
+    for _ in range(warmup):
+        fn()
+    torch.cuda.synchronize()
+    dist.barrier()
+    import tempfile
+
+    with profile(activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]) as prof:
+        for _ in range(iters):
+            fn()
+        torch.cuda.synchronize()
+    # Count GPU kernels only (chrome-trace cat "kernel"): prof.events() also carries
+    # user annotations that Kineto mirrors onto the GPU timeline (e.g. nccl:* and step ranges).
+    path = trace_path or tempfile.mktemp(suffix=".json")
+    prof.export_chrome_trace(path)
+    with open(path) as fh:
+        events = json.load(fh)
+    if not trace_path:
+        os.remove(path)
+    events = events["traceEvents"] if isinstance(events, dict) else events
+    comm, comp = [], []
+    for ev in events:
+        if ev.get("cat") != "kernel" or ev.get("dur", 0) <= 0:
+            continue
+        span = (ev["ts"], ev["ts"] + ev["dur"])
+        (comm if "nccl" in ev["name"].lower() else comp).append(span)
+    comm_u, comp_u = _union(comm), _union(comp)
+    busy_u = _union(comm + comp)
+    total, overlapped = _length(comm_u), _length(_intersect(comm_u, comp_u))
+    to_ms = 1e-3 / iters  # profiler times are in us
+    return dict(comm_ms=round(total * to_ms, 3), overlapped_ms=round(overlapped * to_ms, 3),
+                exposed_ms=round((total - overlapped) * to_ms, 3),
+                compute_ms=round(_length(comp_u) * to_ms, 3),
+                busy_ms=round(_length(busy_u) * to_ms, 3),
+                span_ms=round((busy_u[-1][1] - busy_u[0][0]) * to_ms, 3) if busy_u else 0.0)
+
+
 # ----------------------------------------------------------------------------- passes
 def apply_pass(gm, name):
     """Return (new graph, pass stats). Pipelines are comma-free names joined by '+'."""
